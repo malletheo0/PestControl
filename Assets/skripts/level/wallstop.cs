@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Cameraroommove : MonoBehaviour
+public class wallstop : MonoBehaviour
 {
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,5 +15,4 @@ public class Cameraroommove : MonoBehaviour
         
     }
 
-    
 }
