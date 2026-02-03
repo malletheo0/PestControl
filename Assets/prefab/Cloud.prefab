@@ -46,6 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Preview
   inBlock: 0
   Block: {fileID: 0}
+  playerInput: {fileID: 0}
+  placeAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 95ff2edc-b6c9-4855-ac89-f818bcdeab00
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8406936720520545921
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,9 +69,10 @@ GameObject:
   - component: {fileID: 865052596185477967}
   - component: {fileID: 1710110690570443575}
   - component: {fileID: 3737430816050799097}
+  - component: {fileID: 2489701174015051816}
   m_Layer: 0
   m_Name: Cloud
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,3 +212,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Preview
   inBlock: 0
   Block: {fileID: 1498268992102878137, guid: e05ebc72ec4662c44a7f980d40c09914, type: 3}
+  playerInput: {fileID: 0}
+  placeAction:
+    m_Name: Place
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ac23e18c-f032-4fb8-ac47-b01b5dcfa4b9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!61 &2489701174015051816
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406936720520545921}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
