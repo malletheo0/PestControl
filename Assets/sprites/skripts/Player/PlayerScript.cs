@@ -27,7 +27,7 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 inputVector = moveAction.ReadValue<Vector2>();
         //transform.Translate(inputVector * 3 * Time.deltaTime);
-        velocity.x = inputVector.x * 2.5f;
+        velocity.x = inputVector.x * 5f;
 
         if (jumpAction.WasPressedThisFrame() && isGrounded == true)
         {
@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
     {
         if(hasJumped)
         {
-            velocity.y = 10;
+            velocity.y = 12;
             isGrounded = false;
             hasJumped = false;
         }
