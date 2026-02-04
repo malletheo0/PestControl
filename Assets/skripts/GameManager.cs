@@ -12,14 +12,15 @@ public class GameManager : MonoBehaviour
     public bool bottleSelected = false;
 
     public GameObject canvas;
-    public PlayerInput playerInput;
+    public PlayerInput playerResetInput;
+    public PlayerInput playerDeselecteInput;
     public InputAction resetAction;
     public InputAction deselectAction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        resetAction = playerInput.actions.FindAction("Reset");
-        deselectAction = playerInput.actions.FindAction("Deselect");
+        resetAction = playerResetInput.actions.FindAction("Reset");
+        deselectAction = playerDeselecteInput.actions.FindAction("Deselect");
         deselectAction.Enable();
         resetAction.Enable();
     }
@@ -39,20 +40,26 @@ public class GameManager : MonoBehaviour
             if(cloudSelected == true)
             {
                 Destroy(block);
+                blockSelected = false;
                 cloudSelected = false;
                 canvas.GetComponent<Button>().cloudAmount += 1;
+                canvas.GetComponent<Button>().cloudButtonText.text = canvas.GetComponent<Button>().cloudAmount.ToString();
             }
             else if(boxSelected == true)
             {
                 Destroy(block);
+                blockSelected = false;
                 boxSelected = false;
                 canvas.GetComponent<Button>().boxAmount += 1;
+                canvas.GetComponent<Button>().boxButtonText.text = canvas.GetComponent<Button>().boxAmount.ToString();
             }
             else if(bottleSelected == true)
             {
                 Destroy(block);
+                blockSelected = false;
                 bottleSelected = false;
                 canvas.GetComponent<Button>().bottleAmount += 1;
+                canvas.GetComponent<Button>().bottleButtonText.text = canvas.GetComponent<Button>().bottleAmount.ToString();
 
             }
         }
