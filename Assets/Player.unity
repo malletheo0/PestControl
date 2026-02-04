@@ -198,7 +198,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -400,6 +400,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   playerInput: {fileID: 831279263}
   velocity: {x: 0, y: 0, z: 0}
+  topLeft: {fileID: 844867994}
+  topRight: {fileID: 1627399595}
+  botLeft: {fileID: 2027075334}
+  botRight: {fileID: 3656944}
+  isGrounded: 0
+  isWalled: 0
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &831279263
 MonoBehaviour:
   m_ObjectHideFlags: 0
