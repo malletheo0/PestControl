@@ -57,6 +57,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &8406936720520545921
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +223,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  originalColor: {r: 0, g: 0, b: 0, a: 0}
+  originalColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  gameManager: {fileID: 0}
 --- !u!61 &2489701174015051816
 BoxCollider2D:
   m_ObjectHideFlags: 0
