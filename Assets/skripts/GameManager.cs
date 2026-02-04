@@ -1,33 +1,28 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public bool blockSelected = false;
-    public GameObject canvas;
-    public GameObject player;
-    public int cloudAmountMax;
-    public int boxAmountMax;
-    public int bottleAmountMax;
+    public PlayerInput resetInput;
+    public InputAction resetAction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        cloudAmountMax = canvas.GetComponent<Button>().cloudAmount;
-        boxAmountMax = canvas.GetComponent<Button>().boxAmount;
-        bottleAmountMax = canvas.GetComponent<Button>().bottleAmount;
-
-
+        resetAction = resetInput.actions.FindAction("Reset");
+        resetAction.Enable();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(1+1 ==2)
+        if(resetAction.WasReleasedThisFrame())
         {
-            canvas.GetComponent<Button>().cloudAmount = cloudAmountMax;
-            canvas.GetComponent<Button>().boxAmount = boxAmountMax;
-            canvas.GetComponent<Button>().bottleAmount = bottleAmountMax;
+            int id = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(id);
         }
     }
 

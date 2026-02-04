@@ -20,10 +20,22 @@ public class Button : MonoBehaviour
 
     void Start()
     {
-        cloudButtonText.text = cloudAmount.ToString();
-        boxButtonText.text = boxAmount.ToString();
-        bottleButtonText.text = bottleAmount.ToString();
-        gameManager = GameObject.Find("GameManager");
+        if (cloudButtonText != null)
+        {
+            cloudButtonText.text = cloudAmount.ToString();
+        }
+
+        if (boxButtonText != null)
+        {
+            boxButtonText.text = boxAmount.ToString();
+        }
+
+        if (bottleButtonText != null)
+        {
+            bottleButtonText.text = bottleAmount.ToString();
+        }
+
+        gameManager = GameObject.FindWithTag("GameController");
     }
 
     // Update is called once per frame

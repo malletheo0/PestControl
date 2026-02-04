@@ -29,7 +29,7 @@ public class BoxScript : MonoBehaviour
             {
                 Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
                 boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-                gameObject.tag = "Untagged";
+                gameObject.tag = "Block";
                 tempPosition.y -= hitLeft.distance;
                 transform.position = tempPosition;
                 stop = true;
