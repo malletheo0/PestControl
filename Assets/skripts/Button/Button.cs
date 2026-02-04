@@ -53,6 +53,7 @@ public class Button : MonoBehaviour
             cloudAmount -= 1;
             cloudButtonText.text = cloudAmount.ToString();
             gameManager.GetComponent<GameManager>().blockSelected = true;
+            gameManager.GetComponent<GameManager>().cloudSelected = true;
         }
     }
 
@@ -64,6 +65,7 @@ public class Button : MonoBehaviour
             boxAmount -= 1;
             boxButtonText.text = boxAmount.ToString();
             gameManager.GetComponent<GameManager>().blockSelected = true;
+            gameManager.GetComponent<GameManager>().boxSelected = true;
         }
     }
 
@@ -75,6 +77,7 @@ public class Button : MonoBehaviour
             bottleAmount -= 1;
             bottleButtonText.text = bottleAmount.ToString();
             gameManager.GetComponent<GameManager>().blockSelected = true;
+            gameManager.GetComponent<GameManager>().bottleSelected = true;
         }
     }
 }

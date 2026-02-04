@@ -34,6 +34,9 @@ public class Preview : MonoBehaviour
             {
                 Instantiate(Block, transform.position, Quaternion.identity.normalized);
                 gameManager.GetComponent<GameManager>().blockSelected = false;
+                gameManager.GetComponent<GameManager>().cloudSelected = false;
+                gameManager.GetComponent<GameManager>().boxSelected = false;
+                gameManager.GetComponent<GameManager>().bottleSelected = false;
                 Destroy(gameObject);
             }
         }

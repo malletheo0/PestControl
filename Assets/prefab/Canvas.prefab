@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 182841085539304765}
   m_Layer: 5
   m_Name: CloudText
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 1217145976727346640}
   m_Layer: 5
   m_Name: Box
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 7817289331862816974}
   m_Layer: 5
   m_Name: Cloud
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 9014692829433782108}
   m_Layer: 5
   m_Name: Bottle
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,7 +807,7 @@ GameObject:
   - component: {fileID: 7173547433031428768}
   m_Layer: 5
   m_Name: BoxText
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 7610852959404839728}
   m_Layer: 5
   m_Name: BottleText
-  m_TagString: Box
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1121,12 +1121,24 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 3053909031863087665, guid: 3182a5228e622ee4c846fd565f754798, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 4753730683236270031}
+    - target: {fileID: 3053909031863087665, guid: 3182a5228e622ee4c846fd565f754798, type: 3}
       propertyPath: resetInput
+      value: 
+      objectReference: {fileID: 6063507445140839339}
+    - target: {fileID: 3053909031863087665, guid: 3182a5228e622ee4c846fd565f754798, type: 3}
+      propertyPath: playerInput
       value: 
       objectReference: {fileID: 6063507445140839339}
     - target: {fileID: 3053909031863087665, guid: 3182a5228e622ee4c846fd565f754798, type: 3}
       propertyPath: resetAction.m_Name
       value: Reset
+      objectReference: {fileID: 0}
+    - target: {fileID: 3053909031863087665, guid: 3182a5228e622ee4c846fd565f754798, type: 3}
+      propertyPath: deselectAction.m_Name
+      value: Deselect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
