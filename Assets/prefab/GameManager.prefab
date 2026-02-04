@@ -76,3 +76,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   blockSelected: 0
+  resetInput: {fileID: 5661419293705382921}
+  resetAction:
+    m_Name: Reset
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a3dbcc87-ad32-41b0-9011-0179980ac61b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
