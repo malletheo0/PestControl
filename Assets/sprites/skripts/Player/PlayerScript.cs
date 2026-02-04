@@ -74,17 +74,11 @@ public class PlayerScript : MonoBehaviour
             RaycastHit2D hit2 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             if (hit)
             {
-                if (hit.collider.gameObject.tag == "Ground")
-                {
                     velocity.x = hit.distance / Time.fixedDeltaTime;
-                }
             }
             else if (hit2)
             {
-                if (hit2.collider.gameObject.tag == "Ground")
-                {
                     velocity.x = hit.distance / Time.fixedDeltaTime;
-                }
             }
         }
         if (velocity.y > 0)
