@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2526401320424049305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rightdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 828039079725100643}
   - component: {fileID: 4822735298483519067}
   - component: {fileID: 3867829460790630842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoxBlock
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -214,6 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoxScript
   leftDown: {fileID: 8221784359716544286}
   rightDown: {fileID: 621419766183514614}
+  tempPosition: {x: 0, y: 0, z: 0}
+  stop: 0
 --- !u!1 &8221784359716544286
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5446952525005018149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leftdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}

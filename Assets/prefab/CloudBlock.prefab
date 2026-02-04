@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 240799783100544624}
   - component: {fileID: -7863407145372360808}
   - component: {fileID: 6702130080584066142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CloudBlock
   m_TagString: Block
   m_Icon: {fileID: 0}
