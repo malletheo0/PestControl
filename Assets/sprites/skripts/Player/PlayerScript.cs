@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     public Transform botRight;
     public bool isGrounded;
     public bool isWalled;
+    bool hasJumped = false;
     public LayerMask groundMask;
     void Start()
     {
@@ -25,27 +26,22 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         Vector3 inputVector = moveAction.ReadValue<Vector2>();
-        transform.Translate(inputVector * 3 * Time.deltaTime);
+        //transform.Translate(inputVector * 3 * Time.deltaTime);
+        velocity.x = inputVector.x * 2.5f;
 
         if (jumpAction.WasPressedThisFrame() && isGrounded == true)
         {
-            velocity.y = 6;
-            isGrounded = false;
-        }
-
-        if (isWalled)
-        {
-            velocity.x = 0;
-            transform.position += velocity * Time.deltaTime;
-
-        }
-        if (isGrounded == false)
-        {
-            velocity.y -= 8f * Time.deltaTime;
+            hasJumped = true;
         }
     }
     private void FixedUpdate()
     {
+        if(hasJumped)
+        {
+            velocity.y = 10;
+            isGrounded = false;
+            hasJumped = false;
+        }
         if (isGrounded)
         {
             velocity.y = 0f;
@@ -58,21 +54,21 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        if (velocity.x < 0)
+        if (velocity.x > 0)
         {
             RaycastHit2D hit = Physics2D.Raycast(topRight.position + Vector3.down * 0.001f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.up * 0.001f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             if (hit)
             {
-                    isWalled = true;
+                velocity.x = hit.distance / Time.fixedDeltaTime;
             }
             else if (hit2)
             {
-                    isWalled = true;
+                velocity.x = hit.distance / Time.fixedDeltaTime;
             }
-            
+
         }
-        if (velocity.x > 0)
+        if (velocity.x < 0)
         {
             RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.down * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
@@ -80,14 +76,14 @@ public class PlayerScript : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Ground")
                 {
-                    isWalled = true;
+                    velocity.x = hit.distance / Time.fixedDeltaTime;
                 }
             }
             else if (hit2)
             {
                 if (hit2.collider.gameObject.tag == "Ground")
                 {
-                    isWalled = true;
+                    velocity.x = hit.distance / Time.fixedDeltaTime;
                 }
             }
         }
@@ -121,6 +117,11 @@ public class PlayerScript : MonoBehaviour
                         velocity.y = hit2.distance / Time.fixedDeltaTime * -1;
                 }
 
+            }
+
+            if (isGrounded == false)
+            {
+                velocity.y -= 30f * Time.fixedDeltaTime;
             }
         }
 
