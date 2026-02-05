@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3981567058775736021}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Box
+  m_TagString: Preview
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Preview
   inBlock: 0
+  leftClickPressed: 0
+  isFixedUpdate: 0
   Block: {fileID: 2021491714149196281, guid: c581d15df07afb248a01fea4fd18c647, type: 3}
   playerInput: {fileID: 0}
   placeAction:
@@ -150,7 +152,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

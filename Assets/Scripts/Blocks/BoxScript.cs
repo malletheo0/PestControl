@@ -20,35 +20,39 @@ public class BoxScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
-        RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
-        tempPosition = transform.position;
-        if (hitLeft)
+        if (stop == false)
         {
-            if (hitLeft.collider.gameObject.tag != "Box")
+            RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
+            RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
+            tempPosition = transform.position;
+            if (hitLeft)
             {
-                Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-                gameObject.tag = "Block";
-                tempPosition.y -= hitLeft.distance;
-                transform.position = tempPosition;
-                stop = true;
-
-            }
-        }
-
-        if (hitRight)
-        {
-            if (stop == false)
-            {
-                if (hitRight.collider.gameObject.tag != "Box")
+                if (hitLeft.collider.gameObject.tag != "Box" || hitLeft.collider.gameObject.tag != "Preview")
                 {
                     Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
                     boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-                    gameObject.tag = "Untagged";
-                    tempPosition.y -= hitRight.distance;
+                    gameObject.tag = "Block";
+                    tempPosition.y -= hitLeft.distance;
                     transform.position = tempPosition;
+                    stop = true;
 
+                }
+            }
+
+            if (hitRight)
+            {
+                if (stop == false)
+                {
+                    if (hitRight.collider.gameObject.tag != "Box" || hitRight.collider.gameObject.tag != "Preview")
+                    {
+                        Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
+                        boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                        gameObject.tag = "Untagged";
+                        tempPosition.y -= hitRight.distance;
+                        transform.position = tempPosition;
+                        stop = true;
+
+                    }
                 }
             }
         }

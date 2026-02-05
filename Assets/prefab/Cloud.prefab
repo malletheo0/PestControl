@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 1563027670056048710}
   m_Layer: 0
   m_Name: Cloud
-  m_TagString: Box
+  m_TagString: Preview
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

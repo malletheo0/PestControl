@@ -23,12 +23,14 @@ public class Fade : MonoBehaviour
 
     public  void smoothFade(float time,float timeMax)
     {
-        Debug.Log("smoothFade I gång");
+        //Debug.Log("smoothFade I gång");
         transform.GetComponent<Image>().color = new Color(
         transform.GetComponent<Image>().color.r,
         transform.GetComponent<Image>().color.g,
         transform.GetComponent<Image>().color.b,
-        (time/timeMax)*(time/timeMax));
+        (1 - (time / timeMax) * (time / timeMax)));
+
+        //Debug.Log("" + (1 - (time / timeMax) * (time / timeMax)));
     }
 
 
@@ -36,9 +38,11 @@ public class Fade : MonoBehaviour
     {
         for (float i = 0; i < timeMax; i += Time.deltaTime)
         {
-            smoothFade(time, timeMax);
-            Debug.Log("smoothFadeCourutine igång");
+            smoothFade(i, timeMax);
+            //Debug.Log("smoothFadeCourutine igång");
             yield return null;
         }
+        Destroy(gameObject);
     }
+
 }

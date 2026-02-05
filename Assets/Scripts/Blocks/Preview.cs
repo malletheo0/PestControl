@@ -7,6 +7,8 @@ public class Preview : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     Vector2 mousePosition;
     public bool inBlock = false;
+    public bool leftClickPressed = false;
+    public bool isFixedUpdate = false;
     public GameObject Block;
     public PlayerInput playerInput;
     public InputAction placeAction;
@@ -24,38 +26,70 @@ public class Preview : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        transform.position = mousePosition;
 
 
         if (placeAction.WasPressedThisFrame())
         {
-            if (inBlock == false)
-            {
-                Instantiate(Block, transform.position, Quaternion.identity.normalized);
-                gameManager.GetComponent<GameManager>().blockSelected = false;
-                gameManager.GetComponent<GameManager>().cloudSelected = false;
-                gameManager.GetComponent<GameManager>().boxSelected = false;
-                gameManager.GetComponent<GameManager>().bottleSelected = false;
-                Destroy(gameObject);
-            }
+            leftClickPressed = true;
         }
     }
-
-
-
-
-    public void OnCollisionStay2D(Collision2D collision)
+    private void FixedUpdate()
     {
-        inBlock = true;
-        //ändra namn på bool om det behålls så här
-        gameObject.GetComponent<Renderer>().material.color = new Color(365,0,0);
+        mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        transform.position = mousePosition;
+
+        if (inBlock == true)
+        {
+            inBlock = false;
+        }
+
+        isFixedUpdate = true;
     }
+
+    private void LateUpdate()
+    {
+        if(isFixedUpdate)
+        {
+            if (leftClickPressed)
+            {
+                if (inBlock == false)
+                {
+                    Instantiate(Block, transform.position, Quaternion.identity.normalized);
+                    gameManager.GetComponent<GameManager>().blockSelected = false;
+                    gameManager.GetComponent<GameManager>().cloudSelected = false;
+                    gameManager.GetComponent<GameManager>().boxSelected = false;
+                    gameManager.GetComponent<GameManager>().bottleSelected = false;
+                    Destroy(gameObject);
+                }
+            }
+
+            leftClickPressed = false;
+        }
+
+        isFixedUpdate = false;
+    }
+
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        inBlock = false;
+        //inBlock = false;
         gameObject.GetComponent<Renderer>().material.color = originalColor;
+    }
+
+
+    //public void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    inBlock = true;
+    //    //ändra namn på bool om det behålls så här
+    //    gameObject.GetComponent<Renderer>().material.color = new Color(365,0,0);
+    //}
+
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        inBlock = true;
+        //ändra namn på bool om det behålls så här
+        gameObject.GetComponent<Renderer>().material.color = new Color(365, 0, 0);
     }
 
 

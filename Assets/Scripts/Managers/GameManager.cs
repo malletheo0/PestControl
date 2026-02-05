@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
         if(deselectAction.WasPressedThisFrame())
         {
-            GameObject block = GameObject.FindGameObjectWithTag("Box");
+            GameObject block = GameObject.FindGameObjectWithTag("Preview");
             if(cloudSelected == true)
             {
                 Destroy(block);
@@ -63,7 +63,9 @@ public class GameManager : MonoBehaviour
 
             }
         }
+
+        
+        
     }
 
-    
 }

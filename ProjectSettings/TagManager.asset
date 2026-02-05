@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Ground
   - Block
+  - Preview
   layers:
   - Default
   - TransparentFX
