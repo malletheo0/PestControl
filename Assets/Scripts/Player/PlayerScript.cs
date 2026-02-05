@@ -125,7 +125,6 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("poop");
         GameObject collided = collision.gameObject;
         if (collided.CompareTag("Finish"))
         {
@@ -135,7 +134,6 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("poop");
         GameObject collided = collision.gameObject;
         if (collided.CompareTag("Finish"))
         {
