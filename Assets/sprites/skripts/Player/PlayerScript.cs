@@ -123,11 +123,24 @@ public class PlayerScript : MonoBehaviour
 
         transform.position += velocity * Time.fixedDeltaTime;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Finish"))
+        print("poop");
+        GameObject collided = collision.gameObject;
+        if (collided.CompareTag("Finish"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("poop");
+        GameObject collided = collision.gameObject;
+        if (collided.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
     }
 }
