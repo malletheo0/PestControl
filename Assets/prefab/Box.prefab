@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2319822289528456181}
   - component: {fileID: 8040715652342981354}
   - component: {fileID: 3981567058775736021}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Box
   m_TagString: Preview
   m_Icon: {fileID: 0}
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Preview
   inBlock: 0
   leftClickPressed: 0
-  isFixedUpdate: 0
   Block: {fileID: 2021491714149196281, guid: c581d15df07afb248a01fea4fd18c647, type: 3}
+  boxCollider: {fileID: 0}
   playerInput: {fileID: 0}
   placeAction:
     m_Name: Place
@@ -122,6 +122,9 @@ MonoBehaviour:
     m_Flags: 0
   originalColor: {r: 0, g: 0, b: 0, a: 0}
   gameManager: {fileID: 0}
+  hitableLayers:
+    serializedVersion: 2
+    m_Bits: 119
 --- !u!61 &8040715652342981354
 BoxCollider2D:
   m_ObjectHideFlags: 0
