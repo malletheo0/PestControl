@@ -50,8 +50,8 @@ public class PlayerScript : MonoBehaviour
         {
             velocity.y = 0f;
 
-            RaycastHit2D hit = Physics2D.Raycast(botLeft.position + Vector3.right * 0.001f, Vector2.down, 0.01f, groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.001f, Vector2.down, 0.01f, groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, 0.01f, groundMask);
+            RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, 0.01f, groundMask);
             if (!hit && !hit2)
             {
                 isGrounded = false;
@@ -61,8 +61,8 @@ public class PlayerScript : MonoBehaviour
         if (velocity.x > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
-            RaycastHit2D hit = Physics2D.Raycast(topRight.position + Vector3.down * 0.001f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.up * 0.001f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.up * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             if (hit)
             {
                 velocity.x = hit.distance / Time.fixedDeltaTime;
@@ -76,8 +76,8 @@ public class PlayerScript : MonoBehaviour
         if (velocity.x < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
-            RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.down * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit2 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             if (hit)
             {
                     velocity.x = hit.distance / Time.fixedDeltaTime;
@@ -89,8 +89,8 @@ public class PlayerScript : MonoBehaviour
         }
         if (velocity.y > 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.right * 0.001f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(topRight.position + Vector3.left * 0.001f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.right * 0.01f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit2 = Physics2D.Raycast(topRight.position + Vector3.left * 0.01f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
             if (hit)
             {
                 velocity.y = 0;
@@ -104,8 +104,8 @@ public class PlayerScript : MonoBehaviour
         {
             if (velocity.y < 0)
             {
-                RaycastHit2D hit = Physics2D.Raycast(botLeft.position + Vector3.right * 0.001f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
-                RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.001f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
+                RaycastHit2D hit = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
+                RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
                 if (hit)
                 {
                     isGrounded = true;
