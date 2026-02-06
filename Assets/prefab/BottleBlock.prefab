@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7845747524852306739}
   - component: {fileID: 5698517865017071834}
   - component: {fileID: 8064289289859301225}
+  - component: {fileID: 4777937208336916728}
   m_Layer: 6
   m_Name: BottleBlock
   m_TagString: Block
@@ -189,3 +190,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4777937208336916728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063053953357874669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928457dba59974a4baf5bbcfe480fb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BottleScript
+  isUnder: 0
+  animator: {fileID: 8064289289859301225}
