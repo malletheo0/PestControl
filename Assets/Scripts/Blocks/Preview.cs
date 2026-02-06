@@ -35,6 +35,14 @@ public class Preview : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(gameManager.GetComponent<GameManager>().bottleSelected == true)
+        {
+            boxCastSize = new Vector2(1,0.35f);
+        }
+        else
+        {
+            boxCastSize = new Vector2(1,1);
+        }
         mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         transform.position = mousePosition;
         if(Physics2D.OverlapBox(transform.position, boxCastSize, 0, hitableLayers))

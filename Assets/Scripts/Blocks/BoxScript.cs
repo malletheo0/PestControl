@@ -33,6 +33,7 @@ public class BoxScript : MonoBehaviour
                     boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
                     tempPosition.y -= hitLeft.distance;
                     transform.position = tempPosition;
+                    hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
                 }
                 else if (hitLeft.collider.gameObject.tag != "Box" || hitLeft.collider.gameObject.tag != "Preview")
                 {
@@ -45,7 +46,14 @@ public class BoxScript : MonoBehaviour
 
                 }
             }
-            else if (hitRight)
+
+            if (stop == false)
+            {
+                Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
+                boxRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            } 
+
+            if (hitRight)
             {
                 if (stop == false)
                 {
@@ -55,8 +63,9 @@ public class BoxScript : MonoBehaviour
                         boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
                         tempPosition.y -= hitLeft.distance;
                         transform.position = tempPosition;
+                        hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
                     }
-                    else  if (hitRight.collider.gameObject.tag != "Box" || hitRight.collider.gameObject.tag != "Preview")
+                    else if (hitRight.collider.gameObject.tag != "Box" || hitRight.collider.gameObject.tag != "Preview")
                     {
                         Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
                         boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -67,12 +76,14 @@ public class BoxScript : MonoBehaviour
 
                     }
                 }
+
+                if(stop == false)
+                {
+                    Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
+                    boxRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                }
             }
-            else
-            {
-                Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                boxRigidbody.constraints = RigidbodyConstraints2D.None;
-            }
+            
         }
         
     }
