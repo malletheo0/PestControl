@@ -22,7 +22,7 @@ public class outOfBoundsSkript : MonoBehaviour
             int id = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(id);
         }
-        else if(collision.gameObject.tag == "Box" || collision.gameObject.tag == "Block")
+        else if(collision.gameObject.tag == "Block")
         {
             Destroy(collision.gameObject);
         }

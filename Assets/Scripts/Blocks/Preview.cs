@@ -13,7 +13,6 @@ public class Preview : MonoBehaviour
     public GameObject boxCollider;
     public PlayerInput playerInput;
     public InputAction placeAction;
-    public Color originalColor;
     public GameObject gameManager;
     public LayerMask hitableLayers;
     void Start()
@@ -21,7 +20,6 @@ public class Preview : MonoBehaviour
         playerInput = GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerInput>();
         placeAction = playerInput.actions.FindAction("Place");
         placeAction.Enable();
-        originalColor = gameObject.GetComponent<SpriteRenderer>().color;
         gameManager = GameObject.Find("GameManager");
     }
 
@@ -57,6 +55,16 @@ public class Preview : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if(inBlock == false)
+        {
+
+            gameObject.GetComponent<Renderer>().material.color = new Color(0,1,0);
+        }
+        else
+        {
+            gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0);
+
+        }
 
         leftClickPressed = false;
 
@@ -67,18 +75,6 @@ public class Preview : MonoBehaviour
     }
 
 
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        //inBlock = false;
-        gameObject.GetComponent<Renderer>().material.color = originalColor;
-    }
-
-
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        //ändra namn på bool om det behålls så här
-        gameObject.GetComponent<Renderer>().material.color = new Color(365, 0, 0);
-    }
 
 
 
