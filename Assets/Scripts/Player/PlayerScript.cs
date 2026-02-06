@@ -13,9 +13,9 @@ public class PlayerScript : MonoBehaviour
     public Transform botLeft;
     public Transform botRight;
     public bool isGrounded;
-    public bool isWalled;
     bool hasJumped = false;
     public LayerMask groundMask;
+    public Animator animator;
     void Start()
     {
         moveAction = playerInput.actions.FindAction("Move");
@@ -34,6 +34,9 @@ public class PlayerScript : MonoBehaviour
         {
             hasJumped = true;
         }
+
+        animator.SetFloat("VelocityX", Mathf.Abs(velocity.x));
+        animator.SetBool("IsGrounded", isGrounded);
     }
     private void FixedUpdate()
     {
@@ -57,6 +60,7 @@ public class PlayerScript : MonoBehaviour
 
         if (velocity.x > 0)
         {
+            GetComponent<SpriteRenderer>().flipX = false;
             RaycastHit2D hit = Physics2D.Raycast(topRight.position + Vector3.down * 0.001f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.up * 0.001f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             if (hit)
@@ -71,6 +75,7 @@ public class PlayerScript : MonoBehaviour
         }
         if (velocity.x < 0)
         {
+            GetComponent<SpriteRenderer>().flipX = true;
             RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.down * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.001f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             if (hit)
