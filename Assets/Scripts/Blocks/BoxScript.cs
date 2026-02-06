@@ -44,14 +44,8 @@ public class BoxScript : MonoBehaviour
                     stop = true;
 
                 }
-                else
-                {
-                    Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                    boxRigidbody.constraints = RigidbodyConstraints2D.None;
-                }
             }
-
-            if (hitRight)
+            else if (hitRight)
             {
                 if (stop == false)
                 {
@@ -72,12 +66,12 @@ public class BoxScript : MonoBehaviour
                         stop = true;
 
                     }
-                    else
-                    {
-                        Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                        boxRigidbody.constraints = RigidbodyConstraints2D.None;
-                    }
                 }
+            }
+            else
+            {
+                Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
+                boxRigidbody.constraints = RigidbodyConstraints2D.None;
             }
         }
         

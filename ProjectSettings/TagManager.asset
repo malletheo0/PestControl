@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Block
   - Preview
+  - Bottle
   layers:
   - Default
   - TransparentFX
