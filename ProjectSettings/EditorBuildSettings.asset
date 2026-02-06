@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Victor.unity
     guid: aa4522bdf2b352744a2f35435fc817e7
   - enabled: 1
+    path: Assets/Agnes.unity
+    guid: a4cc27688139e1845a20d1fb48cd787b
+  - enabled: 1
     path: Assets/Banor/Level 1.unity
     guid: 833a13572ebc45440a3c569e743bdae5
   - enabled: 1
