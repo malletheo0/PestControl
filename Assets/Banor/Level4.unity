@@ -276,18 +276,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 64756893947978375, guid: 2e7e59b2877b2034eae0d967939723e3, type: 3}
-      propertyPath: boxAmount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 64756893947978375, guid: 2e7e59b2877b2034eae0d967939723e3, type: 3}
-      propertyPath: cloudAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64756893947978375, guid: 2e7e59b2877b2034eae0d967939723e3, type: 3}
-      propertyPath: bottleAmount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4753730683236270031, guid: 2e7e59b2877b2034eae0d967939723e3, type: 3}
       propertyPath: m_Name
       value: Canvas

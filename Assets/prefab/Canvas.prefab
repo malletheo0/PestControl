@@ -518,8 +518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 405, y: -64}
-  m_SizeDelta: {x: 387.7858, y: 93.138916}
+  m_AnchoredPosition: {x: 396, y: -68}
+  m_SizeDelta: {x: 420, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7860647945878528407
 CanvasRenderer:
@@ -739,9 +739,9 @@ MonoBehaviour:
   Cloud: {fileID: 8406936720520545921, guid: b784010b1e709fa45a4f6d00f50d7cc5, type: 3}
   Box: {fileID: 3775534370631653641, guid: 891abd4d96eb18246b206dde353e416a, type: 3}
   Bottle: {fileID: 3955643464102627737, guid: 2403bb96901ba6244874076e4cd8f65b, type: 3}
-  cloudAmount: 999
-  boxAmount: 999
-  bottleAmount: 999
+  cloudAmount: 1
+  boxAmount: 3
+  bottleAmount: 0
   cloudButtonText: {fileID: 182841085539304765}
   boxButtonText: {fileID: 7173547433031428768}
   bottleButtonText: {fileID: 2647006699193088539}
