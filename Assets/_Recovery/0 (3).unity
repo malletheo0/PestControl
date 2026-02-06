@@ -285,6 +285,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!4 &1151322977 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1299872344990050422, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+  m_PrefabInstance: {fileID: 7662412053580977784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1348387073
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +382,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1832783167 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2844153416250007016, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+  m_PrefabInstance: {fileID: 7662412053580977784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861541263
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +731,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1299872344990050422, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299872344990050422, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2545537438213815444, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.73
@@ -761,6 +779,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2844153416250007016, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844153416250007016, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816264876678376562, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: midLeft
+      value: 
+      objectReference: {fileID: 1832783167}
+    - target: {fileID: 8816264876678376562, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: midRight
+      value: 
+      objectReference: {fileID: 1151322977}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
