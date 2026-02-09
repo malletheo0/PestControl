@@ -4,9 +4,10 @@ using UnityEngine.InputSystem;
 
 public class pulseering : MonoBehaviour
 {
-    bool mouseOver = false;
+    Vector3 mousePosition;
     public Vector3 scale;
     public Vector3 baseScale;
+    public Vector3 position;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,30 +24,32 @@ public class pulseering : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (mouseOver == true)
+        mousePosition = Mouse.current.position.ReadValue();
+        position = transform.position;
+        if (mousePosition.x >= (position.x -= 75f) && mousePosition.x <= (position.x += 130f))
         {
-            
-            scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.1f + 1;
-            transform.localScale = scale;
-            transform.localScale = baseScale;
- 
+            if (mousePosition.y >= (position.y -= 70f) && mousePosition.y <= (position.y += 140f))
+            {
+                scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.125f + 1.1f;
+                transform.localScale = scale;
+                scale = transform.localScale;
+            }
+            else
+            {
+                transform.localScale = baseScale;
+                scale = baseScale;
+            }
         }
         else
         {
             transform.localScale = baseScale;
+            scale = baseScale;
         }
     
     
     }
     private void OnMouseOver()
     {
-        mouseOver = true;
-        Debug.Log("över");
-    }
-
-    private void OnMouseExit()
-    {
-        mouseOver = false;
-        Debug.Log("exit");
+        
     }
 }
