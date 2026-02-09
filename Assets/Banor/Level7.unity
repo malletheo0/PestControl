@@ -2419,8 +2419,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7026851096509228874, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1635132110}
   m_SourcePrefab: {fileID: 100100000, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+--- !u!1 &1635132109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7026851096509228874, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+  m_PrefabInstance: {fileID: 1635132108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1635132110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635132109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07a318ba00be41429ea5da381c7b0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConfettiScript
+  Confetti: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
