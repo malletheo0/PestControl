@@ -4,16 +4,19 @@ using UnityEngine.InputSystem;
 
 public class pulseering : MonoBehaviour
 {
-    bool mouseOver = false;
+    Vector3 mousePosition;
     public Vector3 scale;
     public Vector3 baseScale;
+    public Vector3 position;
+    public Vector2 size;
+    public GameObject gameObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         scale = transform.localScale;
+        size = gameObject.GetComponent<RectTransform>().sizeDelta;
         baseScale = scale;
-
     }
 
     // Update is called once per frame
@@ -23,30 +26,27 @@ public class pulseering : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (mouseOver == true)
+        Debug.Log(size);
+        mousePosition = Mouse.current.position.ReadValue();
+        position = transform.position;
+        if (mousePosition.x >= (position.x - (size.x/2)) && mousePosition.x <= (position.x + (size.x / 2)))
         {
-            
-            scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.1f + 1;
-            transform.localScale = scale;
-            transform.localScale = baseScale;
- 
+            if (mousePosition.y >= (position.y - (size.y / 2)) && mousePosition.y <= (position.y + (size.y / 2)))
+            {
+                scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.1f + 1.1f;
+                transform.localScale = scale;
+                scale = transform.localScale;
+            }
+            else
+            {
+                transform.localScale = baseScale;
+                scale = baseScale;
+            }
         }
         else
         {
             transform.localScale = baseScale;
+            scale = baseScale;
         }
-    
-    
-    }
-    private void OnMouseOver()
-    {
-        mouseOver = true;
-        Debug.Log("över");
-    }
-
-    private void OnMouseExit()
-    {
-        mouseOver = false;
-        Debug.Log("exit");
     }
 }
