@@ -13,16 +13,22 @@ public class GameManager : MonoBehaviour
 
     public GameObject canvas;
     public PlayerInput playerResetInput;
-    public PlayerInput playerDeselecteInput;
+    public PlayerInput playerDeselectInput;
+    public PlayerInput playerInput;
+
     public InputAction resetAction;
     public InputAction deselectAction;
+    public InputAction escapeAction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         resetAction = playerResetInput.actions.FindAction("Reset");
-        deselectAction = playerDeselecteInput.actions.FindAction("Deselect");
+        deselectAction = playerDeselectInput.actions.FindAction("Deselect");
+        escapeAction = playerInput.actions.FindAction("Exit");
+
         deselectAction.Enable();
         resetAction.Enable();
+        escapeAction.Enable();
     }
 
     // Update is called once per frame
@@ -32,6 +38,11 @@ public class GameManager : MonoBehaviour
         {
             int id = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(id);
+        }
+
+        if(escapeAction.WasPressedThisFrame())
+        {
+            SceneManager.LoadScene(0);
         }
 
         if(deselectAction.WasPressedThisFrame())
