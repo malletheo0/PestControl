@@ -8,13 +8,15 @@ public class pulseering : MonoBehaviour
     public Vector3 scale;
     public Vector3 baseScale;
     public Vector3 position;
+    public Vector2 size;
+    public GameObject gameObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         scale = transform.localScale;
+        size = gameObject.GetComponent<RectTransform>().sizeDelta;
         baseScale = scale;
-
     }
 
     // Update is called once per frame
@@ -24,13 +26,14 @@ public class pulseering : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log(size);
         mousePosition = Mouse.current.position.ReadValue();
         position = transform.position;
-        if (mousePosition.x >= (position.x -= 75f) && mousePosition.x <= (position.x += 130f))
+        if (mousePosition.x >= (position.x - (size.x/2)) && mousePosition.x <= (position.x + (size.x / 2)))
         {
-            if (mousePosition.y >= (position.y -= 70f) && mousePosition.y <= (position.y += 140f))
+            if (mousePosition.y >= (position.y - (size.y / 2)) && mousePosition.y <= (position.y + (size.y / 2)))
             {
-                scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.125f + 1.1f;
+                scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.1f + 1.1f;
                 transform.localScale = scale;
                 scale = transform.localScale;
             }
@@ -45,11 +48,5 @@ public class pulseering : MonoBehaviour
             transform.localScale = baseScale;
             scale = baseScale;
         }
-    
-    
-    }
-    private void OnMouseOver()
-    {
-        
     }
 }

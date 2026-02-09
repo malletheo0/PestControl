@@ -440,8 +440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: -75}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -175, y: -355}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33714877
 MonoBehaviour:
@@ -489,12 +489,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level17
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -552,6 +552,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &135340905
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +870,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 900, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &167365626
 MonoBehaviour:
@@ -957,8 +959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 0, y: 175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253959409
 MonoBehaviour:
@@ -1006,12 +1008,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level3
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1069,6 +1071,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &264393650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,8 +1495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 0, y: -175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476614941
 MonoBehaviour:
@@ -1540,12 +1544,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level13
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1603,6 +1607,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &567083263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,8 +1950,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 30}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 350, y: 175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597697545
 MonoBehaviour:
@@ -1993,12 +1999,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level5
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2056,6 +2062,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &669845693
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3175,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 900, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886482735
 MonoBehaviour:
@@ -3255,8 +3263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 65}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 350}
+  m_SizeDelta: {x: 720, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913097639
 MonoBehaviour:
@@ -3436,8 +3444,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -23}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -95}
+  m_SizeDelta: {x: 720, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &962329016
 MonoBehaviour:
@@ -3583,7 +3591,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -5}
-  m_SizeDelta: {x: 30, y: 30}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &976196491
 MonoBehaviour:
@@ -3631,12 +3639,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level8
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3694,6 +3702,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &985538155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,8 +3741,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -40}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -350, y: -175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &985538157
 MonoBehaviour:
@@ -3780,12 +3790,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level11
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3843,6 +3853,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1019390024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,8 +3892,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -40}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 175, y: -175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019390026
 MonoBehaviour:
@@ -3929,12 +3941,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level14
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3992,6 +4004,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1091979179
 GameObject:
   m_ObjectHideFlags: 0
@@ -4131,8 +4145,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: 30}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -350, y: 175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093374601
 MonoBehaviour:
@@ -4180,12 +4194,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level1
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4243,6 +4257,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1094929174
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,8 +4527,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -5}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 175, y: -5}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1162168681
 MonoBehaviour:
@@ -4560,12 +4576,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level9
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4623,6 +4639,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1207578675
 GameObject:
   m_ObjectHideFlags: 0
@@ -4660,8 +4678,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -5}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -350, y: -5}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1207578677
 MonoBehaviour:
@@ -4709,12 +4727,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level6
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4772,6 +4790,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1212569383
 GameObject:
   m_ObjectHideFlags: 0
@@ -4884,8 +4904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: -5}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -175, y: -5}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217160024
 MonoBehaviour:
@@ -4933,12 +4953,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level7
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4996,6 +5016,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1316744674
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,8 +5055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: 30}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 175, y: 175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316744676
 MonoBehaviour:
@@ -5082,12 +5104,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level4
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5145,6 +5167,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1371402621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,8 +5206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: -40}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -175, y: -175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371402623
 MonoBehaviour:
@@ -5231,12 +5255,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level12
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5294,6 +5318,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1459103955
 GameObject:
   m_ObjectHideFlags: 0
@@ -5470,8 +5496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -75}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -350, y: -355}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464555479
 MonoBehaviour:
@@ -5519,12 +5545,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level16
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5582,6 +5608,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1477850491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5758,8 +5786,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -5}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 350, y: -5}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489528355
 MonoBehaviour:
@@ -5807,12 +5835,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level10
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5870,6 +5898,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1504363721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6088,8 +6118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -75}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 350, y: -355}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553973368
 MonoBehaviour:
@@ -6137,12 +6167,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level20
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 20
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6200,6 +6230,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1576750209
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,8 +6358,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 23}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 129}
+  m_SizeDelta: {x: 720, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604364502
 MonoBehaviour:
@@ -6471,8 +6503,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -67}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -295}
+  m_SizeDelta: {x: 720, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614423995
 MonoBehaviour:
@@ -6605,8 +6637,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 0, y: -355}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624487181
 MonoBehaviour:
@@ -6654,12 +6686,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level18
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6717,6 +6749,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1647611055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7144,6 +7178,8 @@ GameObject:
   - component: {fileID: 1672319439}
   - component: {fileID: 1672319438}
   - component: {fileID: 1672319437}
+  - component: {fileID: 1672319440}
+  - component: {fileID: 1672319441}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -7168,8 +7204,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 65}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 331}
+  m_SizeDelta: {x: 720, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1672319437
 MonoBehaviour:
@@ -7265,6 +7301,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672319435}
   m_CullTransparentMesh: 1
+--- !u!114 &1672319440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672319435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78adf343b3c977745a015e6f07e33f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StorKnappPulseeriing
+  mousePosition: {x: 0, y: 0, z: 0}
+  scale: {x: 0, y: 0, z: 0}
+  baseScale: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: 0, z: 0}
+--- !u!114 &1672319441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672319435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f86d9e55b82d9f4e8502d428b14abb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pulseering
+  scale: {x: 0, y: 0, z: 0}
+  baseScale: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 1672319435}
 --- !u!1 &1687580954
 GameObject:
   m_ObjectHideFlags: 0
@@ -7580,8 +7649,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -75}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 175, y: -355}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702096480
 MonoBehaviour:
@@ -7629,12 +7698,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level19
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7692,6 +7761,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1719094685
 GameObject:
   m_ObjectHideFlags: 0
@@ -8096,7 +8167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 4.5
+  m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -8664,8 +8735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: -40}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 350, y: -175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972392091
 MonoBehaviour:
@@ -8713,12 +8784,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level15
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8776,6 +8847,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &1988873306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8849,8 +8922,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 30}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -175, y: 175}
+  m_SizeDelta: {x: 135, y: 135}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012395598
 MonoBehaviour:
@@ -8898,12 +8971,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1745685989}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: level2
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8961,6 +9034,8 @@ MonoBehaviour:
   scale: {x: 0, y: 0, z: 0}
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  gameObject: {fileID: 0}
 --- !u!1 &2014611167
 GameObject:
   m_ObjectHideFlags: 0
