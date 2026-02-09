@@ -2693,7 +2693,8 @@ MonoBehaviour:
   bottleSelected: 0
   canvas: {fileID: 4753730684245846001}
   playerResetInput: {fileID: 5325239973224889650}
-  playerDeselecteInput: {fileID: 5325239973224889650}
+  playerDeselectInput: {fileID: 5325239973224889650}
+  playerInput: {fileID: 5325239973224889650}
   resetAction:
     m_Name: Reset
     m_Type: 0
@@ -2708,6 +2709,15 @@ MonoBehaviour:
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: d7e364a3-a2c6-4e01-83a7-d822c86dc094
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  escapeAction:
+    m_Name: Escape
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d3e2abdf-8002-467e-b107-c9186594ace8
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
