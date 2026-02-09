@@ -12,11 +12,12 @@ public class ConfettiScript : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject)
         {
-            Instantiate(Confetti, transform.position, Quaternion.identity);
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            Instantiate(Confetti, pos, Quaternion.identity);
         }
     }
 }
