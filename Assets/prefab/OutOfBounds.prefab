@@ -179,3 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5433d54ce49efd8438e41dc0e15cb3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::outOfBoundsSkript
+  fade: {fileID: 2612253220285578836, guid: c048a535f667895498398e155d4814fa, type: 3}
+  player: {fileID: 0}
+  canvas: {fileID: 0}
+  fadeStartPosition: {x: 0, y: 0, z: 0}
+  playerStartPosition: {x: 0, y: 0, z: 0}

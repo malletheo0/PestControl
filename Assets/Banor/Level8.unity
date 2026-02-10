@@ -167,6 +167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5911641611368687589, guid: 4da6eb4deb4187d4ca214052932c54b2, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 4753730683784289974}
+    - target: {fileID: 5911641611368687589, guid: 4da6eb4deb4187d4ca214052932c54b2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1636287942}
     - target: {fileID: 6697446293492002331, guid: 4da6eb4deb4187d4ca214052932c54b2, type: 3}
       propertyPath: m_Name
       value: OutOfBounds
@@ -325,6 +333,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+--- !u!1 &1636287942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 416194597333764993, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+  m_PrefabInstance: {fileID: 1636287941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1766842177
 PrefabInstance:
   m_ObjectHideFlags: 0
