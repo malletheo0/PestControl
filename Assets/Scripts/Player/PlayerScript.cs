@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -140,22 +141,23 @@ public class PlayerScript : MonoBehaviour
 
         transform.position += velocity * Time.fixedDeltaTime;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject collided = collision.gameObject;
         if (collided.CompareTag("Finish"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            
+            StartCoroutine(DelayGoal());
+            velocity.x = 0;
+            velocity.y = 0;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    IEnumerator DelayGoal()
     {
-        GameObject collided = collision.gameObject;
-        if (collided.CompareTag("Finish"))
+        for (float i = 0; i < 1.5f; i+=Time.deltaTime)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+            yield return null;
         }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
