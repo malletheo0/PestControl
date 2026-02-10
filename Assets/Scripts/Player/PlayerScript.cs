@@ -26,6 +26,12 @@ public class PlayerScript : MonoBehaviour
     bool hasJumped = false;
     public LayerMask groundMask;
     public Animator animator;
+
+    public AudioClip jumpSound;
+    public AudioClip landSound;
+    public AudioClip walkSound;
+    public AudioClip placeSound;
+    public AudioSource audioSource;
     void Start()
     {
         moveAction = playerInput.actions.FindAction("Move");
@@ -55,13 +61,14 @@ public class PlayerScript : MonoBehaviour
         if(hasJumped)
         {
             velocity.y = 12;
+            audioSource.PlayOneShot(jumpSound);
             isGrounded = false;
             hasJumped = false;
         }
         if (isGrounded)
         {
             velocity.y = 0f;
-
+            audioSource.PlayOneShot(landSound);
             RaycastHit2D hit1 = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, 0.01f, groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, 0.01f, groundMask);
             if (!hit1 && !hit2)
@@ -72,6 +79,7 @@ public class PlayerScript : MonoBehaviour
 
         if (velocity.x > 0)
         {
+            audioSource.PlayOneShot(walkSound);
             GetComponent<SpriteRenderer>().flipX = false;
             RaycastHit2D[] hit2Ds = { Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
             Physics2D.Raycast(midTopRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
@@ -99,6 +107,7 @@ public class PlayerScript : MonoBehaviour
         }
         if (velocity.x < 0)
         {
+            audioSource.PlayOneShot(walkSound);
             GetComponent<SpriteRenderer>().flipX = true;
             RaycastHit2D[] hit2Ds = { Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
             Physics2D.Raycast(midTopLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
