@@ -8,13 +8,19 @@ public class PlayerScript : MonoBehaviour
     public PlayerInput playerInput;
     InputAction moveAction;
     InputAction jumpAction;
+
     public Vector3 velocity;
     public Transform topLeft;
     public Transform topRight;
-    public Transform midLeft;
+    public Transform midTopLeft;
+    public Transform midTopRight;
     public Transform midRight;
+    public Transform midLeft;
+    public Transform midBotLeft;
+    public Transform midBotRight;
     public Transform botLeft;
     public Transform botRight;
+
     public bool isGrounded;
     bool hasJumped = false;
     public LayerMask groundMask;
@@ -53,9 +59,9 @@ public class PlayerScript : MonoBehaviour
         {
             velocity.y = 0f;
 
-            RaycastHit2D hit = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, 0.01f, groundMask);
+            RaycastHit2D hit1 = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, 0.01f, groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, 0.01f, groundMask);
-            if (!hit && !hit2)
+            if (!hit1 && !hit2)
             {
                 isGrounded = false;
             }
@@ -64,47 +70,36 @@ public class PlayerScript : MonoBehaviour
         if (velocity.x > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
-            RaycastHit2D hit = Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.up * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit1 = Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit2 = Physics2D.Raycast(midTopRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit3 = Physics2D.Raycast(midRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            if (hit)
+            RaycastHit2D hit4 = Physics2D.Raycast(midBotRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit5 = Physics2D.Raycast(botRight.position + Vector3.up * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            if (hit1 || hit2 || hit3 || hit4 || hit5)
             {
-                velocity.x = hit.distance / Time.fixedDeltaTime;
-            }
-            else if (hit2)
-            {
-                velocity.x = hit.distance / Time.fixedDeltaTime;
-            }
-            else if (hit3)
-            {
-                velocity.x = hit.distance / Time.fixedDeltaTime;
+                velocity.x = hit1.distance / Time.fixedDeltaTime;
             }
 
         }
         if (velocity.x < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
-            RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit1 = Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit2 = Physics2D.Raycast(midTopLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit3 = Physics2D.Raycast(midLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            if (hit)
+            RaycastHit2D hit4 = Physics2D.Raycast(midBotRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit5 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+
+            if (hit1 || hit2 || hit3 || hit4 || hit5)
             {
-                    velocity.x = hit.distance / Time.fixedDeltaTime;
-            }
-            else if (hit2)
-            {
-                    velocity.x = hit.distance / Time.fixedDeltaTime;
-            }
-            else if (hit3)
-            {
-                velocity.x = hit.distance / Time.fixedDeltaTime;
+                velocity.x = hit1.distance / Time.fixedDeltaTime;
             }
         }
         if (velocity.y > 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(topLeft.position + Vector3.right * 0.01f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit1 = Physics2D.Raycast(topLeft.position + Vector3.right * 0.01f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(topRight.position + Vector3.left * 0.01f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
-            if (hit)
+            if (hit1)
             {
                 velocity.y = 0;
             }
@@ -117,12 +112,12 @@ public class PlayerScript : MonoBehaviour
         {
             if (velocity.y < 0)
             {
-                RaycastHit2D hit = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
+                RaycastHit2D hit1 = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
                 RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
-                if (hit)
+                if (hit1)
                 {
                     isGrounded = true;
-                    velocity.y = hit.distance / Time.fixedDeltaTime * -1;     
+                    velocity.y = hit1.distance / Time.fixedDeltaTime * -1;     
                 }
                 else if (hit2)
                 {
