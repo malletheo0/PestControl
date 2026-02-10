@@ -16,8 +16,11 @@ public class ConfettiScript : MonoBehaviour
     {
         if(collision.gameObject)
         {
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            Instantiate(Confetti, pos, Quaternion.identity);
+            if (collision.gameObject.tag == "Player")
+            {
+                Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                Instantiate(Confetti, pos, Quaternion.identity);
+            }
         }
     }
 }
