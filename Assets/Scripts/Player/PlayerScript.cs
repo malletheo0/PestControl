@@ -73,29 +73,54 @@ public class PlayerScript : MonoBehaviour
         if (velocity.x > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
-            RaycastHit2D hit1 = Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(midTopRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit3 = Physics2D.Raycast(midRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit4 = Physics2D.Raycast(midBotRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit5 = Physics2D.Raycast(botRight.position + Vector3.up * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            if (hit1 || hit2 || hit3 || hit4 || hit5)
+            RaycastHit2D[] hit2Ds = { Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(midTopRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(midRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(midBotRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(botRight.position + Vector3.up * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask)};
+
+            for (int i = 0; i < hit2Ds.Length; i++)
             {
-                velocity.x = hit1.distance / Time.fixedDeltaTime;
+                if (hit2Ds[i])
+                {
+                    float smallestDistance = 0;
+                    for (int j = 0; j < hit2Ds.Length; j++)
+                    {
+                        if (smallestDistance >= hit2Ds[j].distance)
+                        {
+                            smallestDistance = hit2Ds[j].distance;
+                        }
+                    }
+                    velocity.x = smallestDistance / Time.fixedDeltaTime;
+                    i = hit2Ds.Length;
+                }
             }
 
         }
         if (velocity.x < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
-            RaycastHit2D hit1 = Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit2 = Physics2D.Raycast(midTopLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit3 = Physics2D.Raycast(midLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit4 = Physics2D.Raycast(midBotLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit5 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D[] hit2Ds = { Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(midTopLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(midLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(midBotLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
+            Physics2D.Raycast(botLeft.position + Vector3.up * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask)};
 
-            if (hit1 || hit2 || hit3 || hit4 || hit5)
+            for (int i = 0; i < hit2Ds.Length; i++)
             {
-                velocity.x = hit1.distance / Time.fixedDeltaTime * -1f;
+                if (hit2Ds[i])
+                {
+                    float smallestDistance = 0;
+                    for (int j = 0; j < hit2Ds.Length; j++)
+                    {
+                        if(smallestDistance >= hit2Ds[j].distance)
+                        {
+                            smallestDistance = hit2Ds[j].distance;
+                        }
+                    }
+                    velocity.x = smallestDistance / Time.fixedDeltaTime * -1f;
+                    i = hit2Ds.Length;
+                }
             }
         }
         if (velocity.y > 0)
