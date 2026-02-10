@@ -9,7 +9,6 @@ public class pulseering : MonoBehaviour
     public Vector3 baseScale;
     public Vector3 position;
     public Vector2 size;
-    public GameObject gameObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +25,6 @@ public class pulseering : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(size);
         mousePosition = Mouse.current.position.ReadValue();
         position = transform.position;
         if (mousePosition.x >= (position.x - (size.x/2)) && mousePosition.x <= (position.x + (size.x / 2)))
