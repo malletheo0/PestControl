@@ -20,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     public Transform midBotRight;
     public Transform botLeft;
     public Transform botRight;
+    Vector3 inputVelocity;
 
     public bool isGrounded;
     bool hasJumped = false;
@@ -37,7 +38,7 @@ public class PlayerScript : MonoBehaviour
     {
         Vector3 inputVector = moveAction.ReadValue<Vector2>();
         //transform.Translate(inputVector * 3 * Time.deltaTime);
-        velocity.x = inputVector.x * 5f;
+        inputVelocity.x = inputVector.x * 5f;
 
         if (jumpAction.WasPressedThisFrame() && isGrounded == true)
         {
@@ -49,6 +50,8 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        velocity.x = inputVelocity.x;
+
         if(hasJumped)
         {
             velocity.y = 12;
@@ -87,12 +90,12 @@ public class PlayerScript : MonoBehaviour
             RaycastHit2D hit1 = Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(midTopLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit3 = Physics2D.Raycast(midLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
-            RaycastHit2D hit4 = Physics2D.Raycast(midBotRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
+            RaycastHit2D hit4 = Physics2D.Raycast(midBotLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
             RaycastHit2D hit5 = Physics2D.Raycast(botLeft.position + Vector3.up * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask);
 
             if (hit1 || hit2 || hit3 || hit4 || hit5)
             {
-                velocity.x = hit1.distance / Time.fixedDeltaTime;
+                velocity.x = hit1.distance / Time.fixedDeltaTime * -1f;
             }
         }
         if (velocity.y > 0)
@@ -133,7 +136,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-
+        inputVelocity.x = 0f;
         transform.position += velocity * Time.fixedDeltaTime;
     }
     private void OnTriggerStay2D(Collider2D collision)
