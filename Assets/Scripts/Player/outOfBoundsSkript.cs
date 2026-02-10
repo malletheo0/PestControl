@@ -8,12 +8,15 @@ public class outOfBoundsSkript : MonoBehaviour
     public GameObject player;
     public GameObject canvas;
 
+    public int missedBoxes;
+    public int originalBottleAmount;
     public Vector3 fadeStartPosition;
     public Vector3 playerStartPosition;
     void Start()
     {
         playerStartPosition = player.transform.position;
         fadeStartPosition = fade.transform.position;
+        originalBottleAmount = canvas.GetComponent<Button>().bottleAmount;
     }
 
     // Update is called once per frame
@@ -28,11 +31,17 @@ public class outOfBoundsSkript : MonoBehaviour
         {
             player.transform.position = playerStartPosition;
             Instantiate(fade, fadeStartPosition, Quaternion.identity.normalized,canvas.transform);
-        //    int id = SceneManager.GetActiveScene().buildIndex;
-        //    SceneManager.LoadScene(id);
+
+            canvas.GetComponent<Button>().bottleAmount = originalBottleAmount;
+            canvas.GetComponent<Button>().bottleButtonText.text = originalBottleAmount.ToString();
+
+            canvas.GetComponent<Button>().boxAmount += missedBoxes;
+            canvas.GetComponent<Button>().boxButtonText.text = canvas.GetComponent<Button>().boxAmount.ToString();
+            missedBoxes = 0;
         }
         else if(collision.gameObject.tag == "Block")
         {
+            missedBoxes++;
             Destroy(collision.gameObject);
         }
     }
