@@ -181,3 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlacePuls
   scale: {x: 0, y: 0, z: 0}
   done: 0
+  bigDone: 0
+  timer: -1

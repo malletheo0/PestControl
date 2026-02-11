@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,6 +9,7 @@ public class PlacePuls : MonoBehaviour
     public Vector3 scale;
     public bool done = false;
     public bool bigDone = false;
+    public float timer;
     void Start()
     {
         scale = transform.localScale;
@@ -17,20 +19,27 @@ public class PlacePuls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(timer <= 0)
+        {
+            timer += Time.deltaTime*3;
+        }
+        timer += Time.deltaTime*3;
         if (done == false)
         {
-            scale.x = scale.y = Mathf.Sin(Time.time * 3) * 0.1f + 1.1f;
+            //scale.x = scale.y = Mathf.Sin(timer * 12) * 0.1f + 1.1f;
+
+            scale.x = scale.y = ((-1f*(timer) * (timer) + 1f)*0.25f) + 1f;
             transform.localScale = scale;
             scale = transform.localScale;
-            if (scale.x >= 1.19f)
+            if (timer >= 1f)
             {
-                bigDone = true;
+                done = true;
             }
             else
             {
                 if (bigDone == true)
                 {
-                    if (scale.x <= 1)
+                    if (scale.x <= 1.01)
                     {
                         transform.localScale = new Vector3(1, 1, 1);
                         done = true;
