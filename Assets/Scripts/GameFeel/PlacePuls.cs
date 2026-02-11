@@ -21,9 +21,9 @@ public class PlacePuls : MonoBehaviour
     {
         if(timer <= 0)
         {
-            timer += Time.deltaTime*3;
+            timer += Time.deltaTime*4;
         }
-        timer += Time.deltaTime*3;
+        timer += Time.deltaTime*4;
         if (done == false)
         {
             //scale.x = scale.y = Mathf.Sin(timer * 12) * 0.1f + 1.1f;

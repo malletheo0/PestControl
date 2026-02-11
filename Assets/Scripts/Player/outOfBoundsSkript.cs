@@ -32,11 +32,17 @@ public class outOfBoundsSkript : MonoBehaviour
             player.transform.position = playerStartPosition;
             Instantiate(fade, fadeStartPosition, Quaternion.identity.normalized,canvas.transform);
 
-            canvas.GetComponent<Button>().bottleAmount = originalBottleAmount;
-            canvas.GetComponent<Button>().bottleButtonText.text = originalBottleAmount.ToString();
+            if (originalBottleAmount >= 1)
+            {
+                canvas.GetComponent<Button>().bottleAmount = originalBottleAmount;
+                canvas.GetComponent<Button>().bottleButtonText.text = originalBottleAmount.ToString();
+            }
 
-            canvas.GetComponent<Button>().boxAmount += missedBoxes;
-            canvas.GetComponent<Button>().boxButtonText.text = canvas.GetComponent<Button>().boxAmount.ToString();
+            if (missedBoxes >= 1)
+            {
+                canvas.GetComponent<Button>().boxAmount += missedBoxes;
+                canvas.GetComponent<Button>().boxButtonText.text = canvas.GetComponent<Button>().boxAmount.ToString();
+            }
             missedBoxes = 0;
         }
         else if(collision.gameObject.tag == "Block")
