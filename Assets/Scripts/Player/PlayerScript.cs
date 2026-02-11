@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour
 
     public bool isGrounded;
     bool hasJumped = false;
+    bool hasLanded = false;
     public LayerMask groundMask;
     public Animator animator;
 
@@ -48,7 +49,14 @@ public class PlayerScript : MonoBehaviour
 
         if (jumpAction.WasPressedThisFrame() && isGrounded == true)
         {
+
+            audioSource.PlayOneShot(jumpSound);
             hasJumped = true;
+        }
+        if (hasLanded)
+        { 
+            audioSource.PlayOneShot(landSound);
+            hasLanded = false;
         }
 
         animator.SetFloat("VelocityX", Mathf.Abs(velocity.x));
@@ -61,14 +69,12 @@ public class PlayerScript : MonoBehaviour
         if(hasJumped)
         {
             velocity.y = 12;
-            audioSource.PlayOneShot(jumpSound);
             isGrounded = false;
             hasJumped = false;
         }
         if (isGrounded)
         {
             velocity.y = 0f;
-            audioSource.PlayOneShot(landSound);
             RaycastHit2D hit1 = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.down, 0.01f, groundMask);
             RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, 0.01f, groundMask);
             if (!hit1 && !hit2)
@@ -79,7 +85,10 @@ public class PlayerScript : MonoBehaviour
 
         if (velocity.x > 0)
         {
-            audioSource.PlayOneShot(walkSound);
+            if (!audioSource.isPlaying && isGrounded == true)
+            {
+                audioSource.Play();
+            }
             GetComponent<SpriteRenderer>().flipX = false;
             RaycastHit2D[] hit2Ds = { Physics2D.Raycast(topRight.position + Vector3.down * 0.01f, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
             Physics2D.Raycast(midTopRight.position, Vector2.right, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
@@ -105,9 +114,12 @@ public class PlayerScript : MonoBehaviour
             }
 
         }
-        if (velocity.x < 0)
+        if (velocity.x < 0 && isGrounded == true)
         {
-            audioSource.PlayOneShot(walkSound);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
             GetComponent<SpriteRenderer>().flipX = true;
             RaycastHit2D[] hit2Ds = { Physics2D.Raycast(topLeft.position + Vector3.down * 0.01f, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
             Physics2D.Raycast(midTopLeft.position, Vector2.left, Mathf.Abs(velocity.x * Time.fixedDeltaTime), groundMask),
@@ -132,6 +144,10 @@ public class PlayerScript : MonoBehaviour
                 }
             }
         }
+        if(velocity.x == 0)
+        {
+            audioSource.Pause();
+        }
         if (velocity.y > 0)
         {
             RaycastHit2D hit1 = Physics2D.Raycast(topLeft.position + Vector3.right * 0.01f, Vector2.up, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
@@ -153,12 +169,14 @@ public class PlayerScript : MonoBehaviour
                 RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.down, Mathf.Abs(velocity.y * Time.fixedDeltaTime), groundMask);
                 if (hit1)
                 {
+                    hasLanded = true;
                     isGrounded = true;
                     velocity.y = hit1.distance / Time.fixedDeltaTime * -1;     
                 }
                 else if (hit2)
                 {
-                        isGrounded = true;
+                    hasLanded = true;
+                    isGrounded = true;
                         velocity.y = hit2.distance / Time.fixedDeltaTime * -1;
                 }
 
