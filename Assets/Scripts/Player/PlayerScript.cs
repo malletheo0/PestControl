@@ -31,7 +31,6 @@ public class PlayerScript : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip landSound;
     public AudioClip walkSound;
-    public AudioClip placeSound;
     public AudioSource audioSource;
     void Start()
     {
