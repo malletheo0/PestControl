@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour
     public AudioClip landSound;
     public AudioClip walkSound;
     public AudioSource audioSource;
+    public AudioSource audioSource2;
     void Start()
     {
         moveAction = playerInput.actions.FindAction("Move");
@@ -49,12 +50,12 @@ public class PlayerScript : MonoBehaviour
         if (jumpAction.WasPressedThisFrame() && isGrounded == true)
         {
 
-            audioSource.PlayOneShot(jumpSound);
+            audioSource2.PlayOneShot(jumpSound);
             hasJumped = true;
         }
         if (hasLanded)
         { 
-            audioSource.PlayOneShot(landSound);
+            audioSource2.PlayOneShot(landSound);
             hasLanded = false;
         }
 
@@ -113,9 +114,9 @@ public class PlayerScript : MonoBehaviour
             }
 
         }
-        if (velocity.x < 0 && isGrounded == true)
+        if (velocity.x < 0)
         {
-            if (!audioSource.isPlaying)
+            if (!audioSource.isPlaying&& isGrounded == true)
             {
                 audioSource.Play();
             }
