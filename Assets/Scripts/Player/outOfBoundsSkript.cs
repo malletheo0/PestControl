@@ -7,10 +7,12 @@ public class outOfBoundsSkript : MonoBehaviour
     public GameObject fade;
     public GameObject player;
     public GameObject canvas;
+    public GameObject gameManager;
 
     public int unBrokenBottles;
     public int missedBoxes;
     public int originalBottleAmount;
+    public int previewModifier;
     public Vector3 fadeStartPosition;
     public Vector3 playerStartPosition;
     void Start()
@@ -18,12 +20,18 @@ public class outOfBoundsSkript : MonoBehaviour
         playerStartPosition = player.transform.position;
         fadeStartPosition = fade.transform.position;
         originalBottleAmount = canvas.GetComponent<Button>().bottleAmount;
+        gameManager = GameObject.FindGameObjectWithTag("GameController");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameManager.GetComponent<GameManager>().bottleSelected == true)
+        {
+            previewModifier = 1;
+        }
+        else previewModifier = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,7 +43,7 @@ public class outOfBoundsSkript : MonoBehaviour
 
             if (originalBottleAmount >= 1)
             {
-                canvas.GetComponent<Button>().bottleAmount = originalBottleAmount- unBrokenBottles;
+                canvas.GetComponent<Button>().bottleAmount = originalBottleAmount- unBrokenBottles-previewModifier;
                 canvas.GetComponent<Button>().bottleButtonText.text = canvas.GetComponent<Button>().bottleAmount.ToString();
             }
 
