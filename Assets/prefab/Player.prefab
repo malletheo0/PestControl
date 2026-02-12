@@ -167,7 +167,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   animator: {fileID: 2358062131475654204}
-  jumpSound: {fileID: 8300000, guid: 20eb061cb8e275243893688d9da3b3dc, type: 3}
+  jumpSound: {fileID: 8300000, guid: 3cab1026d3d2ebc4998f723815dc8de4, type: 3}
   landSound: {fileID: 8300000, guid: b1242e2edb99b6c4faab5e4df1418759, type: 3}
   walkSound: {fileID: 8300000, guid: feb0bc0b138cac946b0264dc7877e218, type: 3}
   audioSource: {fileID: 3684005512729216159}
