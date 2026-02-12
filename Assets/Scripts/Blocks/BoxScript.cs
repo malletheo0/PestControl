@@ -37,107 +37,122 @@ public class BoxScript : MonoBehaviour
             Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
             boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
         }
+        else
+        {
+            Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
+            boxRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
         if (foreverStop == false)
         {
+            hasHit = false;
             if(rb.linearVelocityY>= 0.00000000001 || rb.linearVelocityY <= -0.000000001)
             {
                 playedSound = false;
             }
-                RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
-                RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
-                tempPosition = transform.position;
+            RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
+            RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
+            tempPosition = transform.position;
 
-                if (hitLeft)
+            if (hitLeft)
+            {
+                Debug.Log("vänster träffar");
+                if (hitLeft.collider.gameObject.tag == "Bottle" || hitLeft.collider.gameObject.tag == "Player")
                 {
-                    Debug.Log("vänster träffar");
-                    if (hitLeft.collider.gameObject.tag == "Bottle" || hitLeft.collider.gameObject.tag == "Player")
+                    Debug.Log("vänster inne");
+                    hasHit = true;
+
+                    if (hitLeft.collider.gameObject.tag == "bottle")
                     {
+                        hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
+                        tempPosition.y -= hitLeft.distance;
+                        transform.position = tempPosition;
+                    }
+                    else if (hitRight)
+                    {
+                        if (hitRight.collider.gameObject.tag != "Ground" && hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag != "bottle")
+                        {
+                            tempPosition.y -= hitLeft.distance;
+                            transform.position = tempPosition;
+                        }
+                    }
+         
+                    if (playedSound == false)
+                    {
+                        hasLanded = true;
+                    }
+                }
+                else if (hitLeft.collider.gameObject.tag == "Ground" || hitLeft.collider.gameObject.tag == "Block")
+                {
+                    Debug.Log("Left träffadadadaedfe");
+                    hasHit = true;
+                    gameObject.tag = "Block";
+                    tempPosition.y -= hitLeft.distance;
+                    transform.position = tempPosition;
+                    stop = true;
+                    if (hitLeft.collider.gameObject.layer == 8)
+                    { }
+                    else
+                    {
+                        foreverStop = true;
+                    }
+                    if (playedSound == false)
+                    {
+                        hasLanded = true;
+                    }
+                }
+
+            }
+            else
+            {
+                stop = false;
+            }
+
+
+            if (hitRight)
+            {
+                Debug.Log("högér träffar");
+                if (stop == false)
+                {
+                    if (hitRight.collider.gameObject.tag == "Bottle" || hitRight.collider.gameObject.tag == "Player")
+                    {
+                        Debug.Log("högér träffar innw");
                         hasHit = true;
                         tempPosition.y -= hitLeft.distance;
                         transform.position = tempPosition;
-                        if (hitLeft.collider.gameObject.tag == "bottle")
+                        if (hitRight.collider.gameObject.tag == "Bottle")
                         {
-                            hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
+                            hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
                         }
                         if (playedSound == false)
                         {
                             hasLanded = true;
                         }
                     }
-
-                    if (hitLeft.collider.gameObject.tag == "Ground" || hitLeft.collider.gameObject.tag == "Block")
+                    else if (hitRight.collider.gameObject.tag == "Ground" || hitRight.collider.gameObject.tag == "Block")
                     {
-                        Debug.Log("Left träffadadadaedfe");
+                        Debug.Log("right träffadadadaedfe");
                         hasHit = true;
                         gameObject.tag = "Block";
                         tempPosition.y -= hitLeft.distance;
                         transform.position = tempPosition;
-                        stop = true;
-                        if (hitLeft.collider.gameObject.layer == 8)
+                        if (hitRight.collider.gameObject.layer == 8)
                         { }
                         else
                         {
                             foreverStop = true;
                         }
+                        stop = true;
                         if (playedSound == false)
                         {
                             hasLanded = true;
                         }
                     }
-
                 }
-                else
-                {
-                    stop = false;
-                }
-
-
-                if (hitRight)
-                {
-                    Debug.Log("högér träffar");
-                    if (stop == false)
-                    {
-                        if (hitRight.collider.gameObject.tag == "Bottle" || hitRight.collider.gameObject.tag == "Player")
-                        {
-                            hasHit = true;
-                            tempPosition.y -= hitLeft.distance;
-                            transform.position = tempPosition;
-                            if (hitRight.collider.gameObject.tag == "Bottle")
-                            {
-                                hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
-                        }
-                            if (playedSound == false)
-                            {
-                                hasLanded = true;
-                            }
-                        }
-
-                        if (hitRight.collider.gameObject.tag == "Ground" || hitRight.collider.gameObject.tag == "Block")
-                        {
-                            Debug.Log("right träffadadadaedfe");
-                            hasHit = true;
-                            gameObject.tag = "Block";
-                            tempPosition.y -= hitLeft.distance;
-                            transform.position = tempPosition;
-                            if (hitRight.collider.gameObject.layer == 8)
-                            { }
-                            else
-                            {
-                                foreverStop = true;
-                            }
-                            stop = true;
-                            if (playedSound == false)
-                            {
-                                hasLanded = true;
-                            }
-                        }
-                    }
-                }
-                
-                if(hitLeft.collider == null && hitRight.collider == null)
-                {
-                    hasHit = false;
-                }
+            }  
+            if(hitLeft.collider == null && hitRight.collider == null)
+            {
+                hasHit = false;
+            }
 
         }
     }

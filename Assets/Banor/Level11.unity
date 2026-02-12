@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 965617564}
   m_Layer: 6
   m_Name: ContainerOrange
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 1111714825}
   m_Layer: 6
   m_Name: ContainerBlue
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3209,7 +3209,7 @@ GameObject:
   - component: {fileID: 610939449078897406}
   m_Layer: 6
   m_Name: ContainerYellow
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4028,7 +4028,7 @@ GameObject:
   - component: {fileID: 4178794446036827066}
   m_Layer: 6
   m_Name: Level
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
