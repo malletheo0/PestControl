@@ -165,7 +165,7 @@ MonoBehaviour:
   isGrounded: 0
   groundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   animator: {fileID: 2358062131475654204}
   jumpSound: {fileID: 8300000, guid: 3cab1026d3d2ebc4998f723815dc8de4, type: 3}
   landSound: {fileID: 8300000, guid: b1242e2edb99b6c4faab5e4df1418759, type: 3}

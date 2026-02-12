@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1378667842101637402}
   - component: {fileID: 2673401883327717942}
   m_Layer: 0
-  m_Name: Smoke
+  m_Name: CloudParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6464870998284369425}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 2
   cullingMode: 0
@@ -116,8 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 0.15
+      scalar: 0.4
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1382,9 +1382,9 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
-        atime1: 14135
-        atime2: 0
+        atime0: 13621
+        atime1: 44718
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -4840,7 +4840,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b52df2322e92574795da1b16b380a8c, type: 2}
+  - {fileID: 2100000, guid: f3b1f26490c3d8e4d8b09742402933b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

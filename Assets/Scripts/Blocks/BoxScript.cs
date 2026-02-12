@@ -7,9 +7,12 @@ public class BoxScript : MonoBehaviour
     public GameObject rightDown;
     public Vector3 tempPosition;
     public bool stop = false;
+    public bool foreverStop = false;
     public AudioSource audioSource;
     public AudioClip landSound;
     bool hasLanded = false;
+    bool playedSound = false;
+    public bool hasHit = false;
     Rigidbody2D rb;
     void Start()
     {
@@ -19,95 +22,123 @@ public class BoxScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasLanded)
+        if (playedSound == false && hasLanded == true)
         {
             audioSource.PlayOneShot(landSound);
             hasLanded = false;
+            playedSound = true;
         }
     }
 
     private void FixedUpdate()
     {
-        if (rb.linearVelocityY < -0.01)
+        if(hasHit)
         {
-            RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
-            RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
-            tempPosition = transform.position;
-
-            if (hitLeft)
+            Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
+            boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+        if (foreverStop == false)
+        {
+            if(rb.linearVelocityY>= 0.00000000001 || rb.linearVelocityY <= -0.000000001)
             {
-                if (hitLeft.collider.gameObject.tag == "Bottle")
-                {
-                    Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                    boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-                    tempPosition.y -= hitLeft.distance;
-                    transform.position = tempPosition;
-                    hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
-                }
-                else if (hitLeft.collider.gameObject.tag != "Box" || hitLeft.collider.gameObject.tag != "Preview")
-                {
-                    Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                    boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
-                    gameObject.tag = "Block";
-                    tempPosition.y -= hitLeft.distance;
-                    transform.position = tempPosition;
-                    stop = true;
-
-                }
-
-                hasLanded = true;
+                playedSound = false;
             }
-            else
-            {
-                stop = false;
-            }
+                RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
+                RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
+                tempPosition = transform.position;
 
-            if (stop == false)
-            {
-                Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                boxRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-            }
-
-            if (hitRight)
-            {
-                if (stop == false)
+                if (hitLeft)
                 {
-                    if (hitRight.collider.gameObject.tag == "Bottle")
+                    Debug.Log("vänster träffar");
+                    if (hitLeft.collider.gameObject.tag == "Bottle" || hitLeft.collider.gameObject.tag == "Player")
                     {
-                        Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                        boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                        hasHit = true;
                         tempPosition.y -= hitLeft.distance;
                         transform.position = tempPosition;
-                        hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
-                        if (rb.linearVelocityY < -0.05)
+                        if (hitLeft.collider.gameObject.tag == "bottle")
+                        {
+                            hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
+                        }
+                        if (playedSound == false)
                         {
                             hasLanded = true;
                         }
                     }
-                    else if (hitRight.collider.gameObject.tag != "Box" || hitRight.collider.gameObject.tag != "Preview")
+
+                    if (hitLeft.collider.gameObject.tag == "Ground" || hitLeft.collider.gameObject.tag == "Block")
                     {
-                        Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                        boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+                        Debug.Log("Left träffadadadaedfe");
+                        hasHit = true;
                         gameObject.tag = "Block";
-                        tempPosition.y -= hitRight.distance;
+                        tempPosition.y -= hitLeft.distance;
                         transform.position = tempPosition;
                         stop = true;
-                        if (rb.linearVelocityY < -0.05)
+                        if (hitLeft.collider.gameObject.layer == 8)
+                        { }
+                        else
+                        {
+                            foreverStop = true;
+                        }
+                        if (playedSound == false)
                         {
                             hasLanded = true;
                         }
-
                     }
 
-                    hasLanded = true;
                 }
-            }
+                else
+                {
+                    stop = false;
+                }
 
-            if (stop == false)
-            {
-                Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-                boxRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-            }
+
+                if (hitRight)
+                {
+                    Debug.Log("högér träffar");
+                    if (stop == false)
+                    {
+                        if (hitRight.collider.gameObject.tag == "Bottle" || hitRight.collider.gameObject.tag == "Player")
+                        {
+                            hasHit = true;
+                            tempPosition.y -= hitLeft.distance;
+                            transform.position = tempPosition;
+                            if (hitRight.collider.gameObject.tag == "Bottle")
+                            {
+                                hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
+                        }
+                            if (playedSound == false)
+                            {
+                                hasLanded = true;
+                            }
+                        }
+
+                        if (hitRight.collider.gameObject.tag == "Ground" || hitRight.collider.gameObject.tag == "Block")
+                        {
+                            Debug.Log("right träffadadadaedfe");
+                            hasHit = true;
+                            gameObject.tag = "Block";
+                            tempPosition.y -= hitLeft.distance;
+                            transform.position = tempPosition;
+                            if (hitRight.collider.gameObject.layer == 8)
+                            { }
+                            else
+                            {
+                                foreverStop = true;
+                            }
+                            stop = true;
+                            if (playedSound == false)
+                            {
+                                hasLanded = true;
+                            }
+                        }
+                    }
+                }
+                
+                if(hitLeft.collider == null && hitRight.collider == null)
+                {
+                    hasHit = false;
+                }
+
         }
     }
 }

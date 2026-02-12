@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3867829460790630842}
   - component: {fileID: -6600809297183819896}
   - component: {fileID: 5080529731050539804}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: BoxBlock
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -218,8 +218,9 @@ MonoBehaviour:
   rightDown: {fileID: 621419766183514614}
   tempPosition: {x: 0, y: 0, z: 0}
   stop: 0
+  foreverStop: 0
   audioSource: {fileID: -6600809297183819896}
-  landSound: {fileID: 8300000, guid: 352c2de164ca77a438dd3ade0041c389, type: 3}
+  landSound: {fileID: 8300000, guid: 0efeb5384776faa42acbca52b3872fda, type: 3}
 --- !u!82 &-6600809297183819896
 AudioSource:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.32958588
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -330,8 +331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaceEffectScript
   audioSource: {fileID: -6600809297183819896}
-  placeSound: {fileID: 8300000, guid: 21a30b3c182901a4cabb3bdf42d6da9a, type: 3}
-  smoke: {fileID: 1378667842101637402, guid: 2b7a5e4b9a47c8044aa3f1375894136d, type: 3}
+  placeSound: {fileID: 8300000, guid: 4d14d0fafec590b46be82a217b639fe2, type: 3}
+  smoke: {fileID: 2479707643731976852, guid: b8fe4d4f6a5728c4db8b8c2b62aedfd5, type: 3}
 --- !u!1 &8221784359716544286
 GameObject:
   m_ObjectHideFlags: 0
