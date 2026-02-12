@@ -7,6 +7,9 @@ public class BoxScript : MonoBehaviour
     public GameObject rightDown;
     public Vector3 tempPosition;
     public bool stop = false;
+    public AudioSource audioSource;
+    public AudioClip landSound;
+    bool hasLanded = false;
     void Start()
     {
         
@@ -15,7 +18,11 @@ public class BoxScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (hasLanded)
+        {
+            audioSource.PlayOneShot(landSound);
+            hasLanded = false;
+        }
     }
 
     private void FixedUpdate()
@@ -43,6 +50,8 @@ public class BoxScript : MonoBehaviour
                 stop = true;
 
             }
+
+            hasLanded = true;
         }
         else
         {
@@ -66,6 +75,7 @@ public class BoxScript : MonoBehaviour
                     tempPosition.y -= hitLeft.distance;
                     transform.position = tempPosition;
                     hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
+                    hasLanded = true;
                 }
                 else if (hitRight.collider.gameObject.tag != "Box" || hitRight.collider.gameObject.tag != "Preview")
                 {
@@ -75,8 +85,11 @@ public class BoxScript : MonoBehaviour
                     tempPosition.y -= hitRight.distance;
                     transform.position = tempPosition;
                     stop = true;
+                    hasLanded = true;
 
                 }
+
+                hasLanded = true;
             }
 
             if(stop == false)

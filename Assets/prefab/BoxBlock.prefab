@@ -218,6 +218,8 @@ MonoBehaviour:
   rightDown: {fileID: 621419766183514614}
   tempPosition: {x: 0, y: 0, z: 0}
   stop: 0
+  audioSource: {fileID: -6600809297183819896}
+  landSound: {fileID: 8300000, guid: 0be96c879270d854383c74fcb2e9306e, type: 3}
 --- !u!82 &-6600809297183819896
 AudioSource:
   m_ObjectHideFlags: 0

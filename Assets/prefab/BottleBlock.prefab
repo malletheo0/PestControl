@@ -206,6 +206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BottleScript
   isUnder: 0
   animator: {fileID: 8064289289859301225}
+  audioSource: {fileID: 7845566353077093911}
+  breakSound: {fileID: 8300000, guid: 6690efdc4ebd28542b09fc64f184697e, type: 3}
 --- !u!114 &1974208067760937853
 MonoBehaviour:
   m_ObjectHideFlags: 0
