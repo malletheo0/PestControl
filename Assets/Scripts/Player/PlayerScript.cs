@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
     bool hasLanded = false;
     public LayerMask groundMask;
     public Animator animator;
+    string sceneName;
 
     public AudioClip jumpSound;
     public AudioClip landSound;
@@ -39,6 +40,8 @@ public class PlayerScript : MonoBehaviour
         jumpAction = playerInput.actions.FindAction("Jump");
         moveAction.Enable();
         jumpAction.Enable();
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
 
     }
     void Update()
@@ -222,20 +225,25 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         GameObject collided = collision.gameObject;
-        if (collided.CompareTag("Finish"))
+        if (sceneName != "WinScene")
         {
-            StartCoroutine(DelayGoal());
-            velocity.x = 0;
-            velocity.y = 0;
+            if (collided.CompareTag("Finish"))
+            {
+                StartCoroutine(DelayGoal());
+                velocity.x = 0;
+                velocity.y = 0;
+            }
         }
     }
     IEnumerator DelayGoal()
     {
-        for (float i = 0; i < 2f; i+=Time.deltaTime)
-        {
-            yield return null;
-        }
-
+        
+            for (float i = 0; i < 2f; i += Time.deltaTime)
+            {
+                yield return null;
+            }
+        
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
