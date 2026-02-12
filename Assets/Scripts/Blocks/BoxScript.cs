@@ -12,7 +12,7 @@ public class BoxScript : MonoBehaviour
     public AudioClip landSound;
     bool hasLanded = false;
     bool playedSound = false;
-    public bool hasHit = false;
+    public bool hasHit = true;
     Rigidbody2D rb;
     void Start()
     {
@@ -102,52 +102,54 @@ public class BoxScript : MonoBehaviour
                 }
 
             }
-            else
-            {
-                stop = false;
-            }
 
 
             if (hitRight)
             {
                 Debug.Log("högér träffar");
-                if (stop == false)
+                if (hitRight.collider.gameObject.tag == "Bottle" || hitRight.collider.gameObject.tag == "Player")
                 {
-                    if (hitRight.collider.gameObject.tag == "Bottle" || hitRight.collider.gameObject.tag == "Player")
+                    Debug.Log("högér träffar innw");
+                    hasHit = true;
+                    tempPosition.y -= hitLeft.distance;
+                    transform.position = tempPosition;
+                    if (hitRight.collider.gameObject.tag == "Bottle")
                     {
-                        Debug.Log("högér träffar innw");
-                        hasHit = true;
-                        tempPosition.y -= hitLeft.distance;
-                        transform.position = tempPosition;
-                        if (hitRight.collider.gameObject.tag == "Bottle")
+                        hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
+                    }
+                    else if (hitLeft)
+                    {
+                        if (hitLeft.collider.gameObject.tag != "Ground" && hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag != "bottle")
                         {
-                            hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
-                        }
-                        if (playedSound == false)
-                        {
-                            hasLanded = true;
+                            tempPosition.y -= hitRight.distance;
+                            transform.position = tempPosition;
                         }
                     }
-                    else if (hitRight.collider.gameObject.tag == "Ground" || hitRight.collider.gameObject.tag == "Block")
+                    if (playedSound == false)
                     {
-                        Debug.Log("right träffadadadaedfe");
-                        hasHit = true;
-                        gameObject.tag = "Block";
-                        tempPosition.y -= hitLeft.distance;
-                        transform.position = tempPosition;
-                        if (hitRight.collider.gameObject.layer == 8)
-                        { }
-                        else
-                        {
-                            foreverStop = true;
-                        }
-                        stop = true;
-                        if (playedSound == false)
-                        {
-                            hasLanded = true;
-                        }
+                        hasLanded = true;
                     }
                 }
+                else if (hitRight.collider.gameObject.tag == "Ground" || hitRight.collider.gameObject.tag == "Block")
+                {
+                    Debug.Log("right träffadadadaedfe");
+                    hasHit = true;
+                    gameObject.tag = "Block";
+                    tempPosition.y -= hitLeft.distance;
+                    transform.position = tempPosition;
+                    if (hitRight.collider.gameObject.layer == 8)
+                    { }
+                    else
+                    {
+                        foreverStop = true;
+                    }
+                    stop = true;
+                    if (playedSound == false)
+                    {
+                        hasLanded = true;
+                    }
+                }
+                
             }  
             if(hitLeft.collider == null && hitRight.collider == null)
             {
