@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaceEffectScript
   audioSource: {fileID: -4388188471353943249}
-  placeSound: {fileID: 8300000, guid: 4d14d0fafec590b46be82a217b639fe2, type: 3}
+  placeSound: {fileID: 8300000, guid: 21a30b3c182901a4cabb3bdf42d6da9a, type: 3}
   smoke: {fileID: 1378667842101637402, guid: 2b7a5e4b9a47c8044aa3f1375894136d, type: 3}
 --- !u!82 &-4388188471353943249
 AudioSource:
@@ -213,7 +213,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.32958588
   m_Pitch: 1
   Loop: 0
   Mute: 0

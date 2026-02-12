@@ -6,7 +6,6 @@ public class MenuScript : MonoBehaviour
 {
     void Start()
     {
-       
     }
 
     void Update()
@@ -24,5 +23,13 @@ public class MenuScript : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+    public void PlayerSoundSlider()
+    {
+
+    }
+    public void EffectsSoundSlider()
+    {
+
     }
 }
