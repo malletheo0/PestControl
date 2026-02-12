@@ -7,9 +7,10 @@ public class BottleScript : MonoBehaviour
     public Animator animator;
     public AudioSource audioSource;
     public AudioClip breakSound;
+    public GameObject outOfBounds;
     void Start()
     {
-        
+        outOfBounds = GameObject.Find("OutOfBounds");
     }
     void Update()
     {
@@ -20,6 +21,7 @@ public class BottleScript : MonoBehaviour
     {
         //starta animation som sedan anropar ett animation event för att kopla till methoden för att förstöra
         isUnder = true;
+        outOfBounds.GetComponent<outOfBoundsSkript>().unBrokenBottles -= 1;
 
     }
 

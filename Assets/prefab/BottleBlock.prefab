@@ -208,6 +208,7 @@ MonoBehaviour:
   animator: {fileID: 8064289289859301225}
   audioSource: {fileID: 7845566353077093911}
   breakSound: {fileID: 8300000, guid: 6690efdc4ebd28542b09fc64f184697e, type: 3}
+  outOfBounds: {fileID: 0}
 --- !u!114 &1974208067760937853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceEffectScript
   audioSource: {fileID: 7845566353077093911}
   placeSound: {fileID: 8300000, guid: 4d14d0fafec590b46be82a217b639fe2, type: 3}
+  smoke: {fileID: 1378667842101637402, guid: 2b7a5e4b9a47c8044aa3f1375894136d, type: 3}
 --- !u!82 &7845566353077093911
 AudioSource:
   m_ObjectHideFlags: 0

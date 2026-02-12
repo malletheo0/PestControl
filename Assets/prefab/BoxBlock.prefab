@@ -331,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceEffectScript
   audioSource: {fileID: -6600809297183819896}
   placeSound: {fileID: 8300000, guid: 4d14d0fafec590b46be82a217b639fe2, type: 3}
+  smoke: {fileID: 1378667842101637402, guid: 2b7a5e4b9a47c8044aa3f1375894136d, type: 3}
 --- !u!1 &8221784359716544286
 GameObject:
   m_ObjectHideFlags: 0
