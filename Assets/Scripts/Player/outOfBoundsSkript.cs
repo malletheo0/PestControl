@@ -18,7 +18,6 @@ public class outOfBoundsSkript : MonoBehaviour
         playerStartPosition = player.transform.position;
         fadeStartPosition = fade.transform.position;
         originalBottleAmount = canvas.GetComponent<Button>().bottleAmount;
-        unBrokenBottles = originalBottleAmount;
     }
 
     // Update is called once per frame
@@ -36,9 +35,8 @@ public class outOfBoundsSkript : MonoBehaviour
 
             if (originalBottleAmount >= 1)
             {
-                canvas.GetComponent<Button>().bottleAmount = unBrokenBottles;
-                canvas.GetComponent<Button>().bottleButtonText.text = unBrokenBottles.ToString();
-                unBrokenBottles = originalBottleAmount;
+                canvas.GetComponent<Button>().bottleAmount = originalBottleAmount- unBrokenBottles;
+                canvas.GetComponent<Button>().bottleButtonText.text = canvas.GetComponent<Button>().bottleAmount.ToString();
             }
 
             if (missedBoxes >= 1)

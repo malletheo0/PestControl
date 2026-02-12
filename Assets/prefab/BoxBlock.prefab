@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3867829460790630842}
   - component: {fileID: -6600809297183819896}
   - component: {fileID: 5080529731050539804}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: BoxBlock
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -218,6 +218,7 @@ MonoBehaviour:
   rightDown: {fileID: 621419766183514614}
   tempPosition: {x: 0, y: 0, z: 0}
   stop: 0
+  foreverStop: 0
   audioSource: {fileID: -6600809297183819896}
   landSound: {fileID: 8300000, guid: 0efeb5384776faa42acbca52b3872fda, type: 3}
 --- !u!82 &-6600809297183819896
@@ -331,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaceEffectScript
   audioSource: {fileID: -6600809297183819896}
   placeSound: {fileID: 8300000, guid: 4d14d0fafec590b46be82a217b639fe2, type: 3}
-  smoke: {fileID: 1378667842101637402, guid: 2b7a5e4b9a47c8044aa3f1375894136d, type: 3}
+  smoke: {fileID: 2479707643731976852, guid: b8fe4d4f6a5728c4db8b8c2b62aedfd5, type: 3}
 --- !u!1 &8221784359716544286
 GameObject:
   m_ObjectHideFlags: 0
