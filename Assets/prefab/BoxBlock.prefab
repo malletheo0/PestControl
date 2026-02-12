@@ -221,6 +221,7 @@ MonoBehaviour:
   foreverStop: 0
   audioSource: {fileID: -6600809297183819896}
   landSound: {fileID: 8300000, guid: 0efeb5384776faa42acbca52b3872fda, type: 3}
+  hasHit: 0
 --- !u!82 &-6600809297183819896
 AudioSource:
   m_ObjectHideFlags: 0
@@ -331,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaceEffectScript
   audioSource: {fileID: -6600809297183819896}
-  placeSound: {fileID: 8300000, guid: 4d14d0fafec590b46be82a217b639fe2, type: 3}
+  placeSound: {fileID: 8300000, guid: 21a30b3c182901a4cabb3bdf42d6da9a, type: 3}
   smoke: {fileID: 2479707643731976852, guid: b8fe4d4f6a5728c4db8b8c2b62aedfd5, type: 3}
 --- !u!1 &8221784359716544286
 GameObject:
