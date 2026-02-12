@@ -231,7 +231,7 @@ public class PlayerScript : MonoBehaviour
     }
     IEnumerator DelayGoal()
     {
-        for (float i = 0; i < 1.5f; i+=Time.deltaTime)
+        for (float i = 0; i < 2f; i+=Time.deltaTime)
         {
             yield return null;
         }
