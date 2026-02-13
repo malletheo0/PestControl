@@ -5,6 +5,7 @@ public class BoxScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject leftDown;
     public GameObject rightDown;
+    public GameObject outOfBounds;
     public Vector3 tempPosition;
     public bool stop = false;
     public bool foreverStop = false;
@@ -17,6 +18,7 @@ public class BoxScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        outOfBounds = GameObject.Find("OutOfBounds");
     }
 
     // Update is called once per frame
@@ -100,16 +102,21 @@ public class BoxScript : MonoBehaviour
                         hasLanded = true;
                     }
                 }
-                else if (hitLeft)
+                else if (hitLeft.collider.gameObject.tag == "Destroy")
                 {
                     if (hitRight)
                     {
                         if (hitLeft.collider.gameObject.tag == "Destroy" && (hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag == "Ground"))
                         {
+                            outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
                             Destroy(gameObject);
                         }
                     }
-                    else Destroy(gameObject);
+                    else
+                    {
+                        outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
+                        Destroy(gameObject);
+                    }
                 }
 
             }
@@ -160,17 +167,19 @@ public class BoxScript : MonoBehaviour
                         hasLanded = true;
                     }
                 }
-                else if (hitRight)
+                else if (hitRight.collider.gameObject.tag == "Destroy")
                 {
                     if (hitLeft)
                     {
                         if (hitRight.collider.gameObject.tag == "Destroy" && (hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag == "Ground"))
                         {
+                            outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
                             Destroy(gameObject);
                         }
                     }
                     else
                     {
+                        outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
                         Destroy(gameObject);
                     }
                 }
