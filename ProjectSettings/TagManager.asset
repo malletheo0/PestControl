@@ -11,6 +11,7 @@ TagManager:
   - Preview
   - Bottle
   - NoStop
+  - Destroy
   layers:
   - Default
   - TransparentFX

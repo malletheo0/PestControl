@@ -75,7 +75,7 @@ public class BoxScript : MonoBehaviour
                             transform.position = tempPosition;
                         }
                     }
-         
+
                     if (playedSound == false)
                     {
                         hasLanded = true;
@@ -99,6 +99,17 @@ public class BoxScript : MonoBehaviour
                     {
                         hasLanded = true;
                     }
+                }
+                else if (hitLeft)
+                {
+                    if (hitRight)
+                    {
+                        if (hitLeft.collider.gameObject.tag == "Destroy" && (hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag == "Ground"))
+                        {
+                            Destroy(gameObject);
+                        }
+                    }
+                    else Destroy(gameObject);
                 }
 
             }
@@ -149,7 +160,21 @@ public class BoxScript : MonoBehaviour
                         hasLanded = true;
                     }
                 }
-                
+                else if (hitRight)
+                {
+                    if (hitLeft)
+                    {
+                        if (hitRight.collider.gameObject.tag == "Destroy" && (hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag == "Ground"))
+                        {
+                            Destroy(gameObject);
+                        }
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                    }
+                }
+
             }  
             if(hitLeft.collider == null && hitRight.collider == null)
             {
