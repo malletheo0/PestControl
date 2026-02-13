@@ -38,7 +38,10 @@ public class BottleScript : MonoBehaviour
 
     public void UnBrokenChange()
     {
-        outOfBounds.GetComponent<outOfBoundsSkript>().unBrokenBottles -= 1;
+        if (outOfBounds != null)
+        {
+            outOfBounds.GetComponent<outOfBoundsSkript>().unBrokenBottles -= 1;
+        }
     }
 
 }
