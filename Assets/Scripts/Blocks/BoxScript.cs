@@ -7,6 +7,7 @@ public class BoxScript : MonoBehaviour
     public GameObject rightDown;
     public GameObject outOfBounds;
     public Vector3 tempPosition;
+    public Vector3 velocity = new Vector3(0,-5,0);
     public bool stop = false;
     public bool foreverStop = false;
     public AudioSource audioSource;
@@ -34,15 +35,14 @@ public class BoxScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(hasHit)
+        transform.position += velocity * Time.fixedDeltaTime;
+        if (hasHit)
         {
-            Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-            boxRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            velocity.y = 0;
         }
         else
         {
-            Rigidbody2D boxRigidbody = gameObject.GetComponent<Rigidbody2D>();
-            boxRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            velocity.y = -5;
         }
         if (foreverStop == false)
         {
@@ -51,9 +51,9 @@ public class BoxScript : MonoBehaviour
             {
                 playedSound = false;
             }
-            RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, 0.1f);
-            RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, 0.1f);
-            tempPosition = transform.position;
+            RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, Mathf.Abs(velocity.y) * Time.fixedDeltaTime);
+            RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, Mathf.Abs(velocity.y) * Time.fixedDeltaTime);
+            //tempPosition = transform.position;
 
             if (hitLeft)
             {
@@ -66,15 +66,15 @@ public class BoxScript : MonoBehaviour
                     if (hitLeft.collider.gameObject.tag == "bottle")
                     {
                         hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
-                        tempPosition.y -= hitLeft.distance;
-                        transform.position = tempPosition;
+                        velocity.y -= hitLeft.distance / Time.fixedDeltaTime;
+                        //transform.position += tempPosition;
                     }
                     else if (hitRight)
                     {
                         if (hitRight.collider.gameObject.tag != "Ground" && hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag != "bottle")
                         {
-                            tempPosition.y -= hitLeft.distance;
-                            transform.position = tempPosition;
+                            velocity.y -= hitLeft.distance / Time.fixedDeltaTime;
+                            //transform.position = tempPosition;
                         }
                     }
 
@@ -88,8 +88,8 @@ public class BoxScript : MonoBehaviour
                     Debug.Log("Left träffadadadaedfe");
                     hasHit = true;
                     gameObject.tag = "Block";
-                    tempPosition.y -= hitLeft.distance;
-                    transform.position = tempPosition;
+                    tempPosition.y -= hitLeft.distance / Time.fixedDeltaTime;
+                    //transform.position = tempPosition;
                     stop = true;
                     if (hitLeft.collider.gameObject.layer == 8)
                     { }
@@ -129,8 +129,8 @@ public class BoxScript : MonoBehaviour
                 {
                     Debug.Log("högér träffar innw");
                     hasHit = true;
-                    tempPosition.y -= hitLeft.distance;
-                    transform.position = tempPosition;
+                    velocity.y -= hitRight.distance / Time.fixedDeltaTime;
+                    //transform.position = tempPosition;
                     if (hitRight.collider.gameObject.tag == "Bottle")
                     {
                         hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
@@ -139,8 +139,8 @@ public class BoxScript : MonoBehaviour
                     {
                         if (hitLeft.collider.gameObject.tag != "Ground" && hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag != "bottle")
                         {
-                            tempPosition.y -= hitRight.distance;
-                            transform.position = tempPosition;
+                            velocity.y -= hitRight.distance / Time.fixedDeltaTime;
+                            //transform.position = tempPosition;
                         }
                     }
                     if (playedSound == false)
@@ -153,8 +153,8 @@ public class BoxScript : MonoBehaviour
                     Debug.Log("right träffadadadaedfe");
                     hasHit = true;
                     gameObject.tag = "Block";
-                    tempPosition.y -= hitLeft.distance;
-                    transform.position = tempPosition;
+                    velocity.y -= hitRight.distance / Time.fixedDeltaTime;
+                    //transform.position = tempPosition;
                     if (hitRight.collider.gameObject.layer == 8)
                     { }
                     else

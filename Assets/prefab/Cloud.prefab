@@ -169,7 +169,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   hitableLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 375
 --- !u!50 &1563027670056048710
 Rigidbody2D:
   serializedVersion: 5

@@ -123,7 +123,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   hitableLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 375
 --- !u!61 &3816321317467652415
 BoxCollider2D:
   m_ObjectHideFlags: 0

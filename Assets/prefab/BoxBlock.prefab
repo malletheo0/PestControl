@@ -190,7 +190,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -201,7 +201,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 7
 --- !u!114 &3867829460790630842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +216,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoxScript
   leftDown: {fileID: 8221784359716544286}
   rightDown: {fileID: 621419766183514614}
+  outOfBounds: {fileID: 0}
   tempPosition: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 1, z: 0}
   stop: 0
   foreverStop: 0
   audioSource: {fileID: -6600809297183819896}
