@@ -88,7 +88,7 @@ public class BoxScript : MonoBehaviour
                     Debug.Log("Left träffadadadaedfe");
                     hasHit = true;
                     gameObject.tag = "Block";
-                    tempPosition.y -= hitLeft.distance / Time.fixedDeltaTime;
+                    velocity.y -= hitLeft.distance / Time.fixedDeltaTime;
                     //transform.position = tempPosition;
                     stop = true;
                     if (hitLeft.collider.gameObject.layer == 8)
