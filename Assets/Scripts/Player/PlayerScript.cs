@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PlayerScript : MonoBehaviour
     public LayerMask groundMask;
     public Animator animator;
     string sceneName;
+    public TextMeshProUGUI levelText;
 
     public AudioClip jumpSound;
     public AudioClip landSound;
@@ -42,6 +44,7 @@ public class PlayerScript : MonoBehaviour
         jumpAction.Enable();
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
+        levelText.SetText(sceneName);
 
     }
     void Update()
