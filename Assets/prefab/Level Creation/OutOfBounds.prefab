@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5911641611368687589}
   m_Layer: 0
   m_Name: OutOfBounds
-  m_TagString: Untagged
+  m_TagString: Destroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,5 +182,10 @@ MonoBehaviour:
   fade: {fileID: 2612253220285578836, guid: c048a535f667895498398e155d4814fa, type: 3}
   player: {fileID: 0}
   canvas: {fileID: 0}
+  gameManager: {fileID: 0}
+  unBrokenBottles: 0
+  missedBoxes: 0
+  originalBottleAmount: 0
+  previewModifier: 0
   fadeStartPosition: {x: 0, y: 0, z: 0}
   playerStartPosition: {x: 0, y: 0, z: 0}
