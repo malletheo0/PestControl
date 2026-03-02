@@ -15,6 +15,7 @@ public class BoxScript : MonoBehaviour
     bool hasLanded = false;
     bool playedSound = false;
     public bool hasHit = true;
+    public bool destroy = false;
     Rigidbody2D rb;
     void Start()
     {
@@ -57,24 +58,20 @@ public class BoxScript : MonoBehaviour
 
             if (hitLeft)
             {
-                Debug.Log("vänster träffar");
                 if (hitLeft.collider.gameObject.tag == "Bottle" || hitLeft.collider.gameObject.tag == "Player")
                 {
-                    Debug.Log("vänster inne");
                     hasHit = true;
 
                     if (hitLeft.collider.gameObject.tag == "bottle")
                     {
                         hitLeft.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
-                        velocity.y -= hitLeft.distance / Time.fixedDeltaTime;
-                        //transform.position += tempPosition;
+                        velocity.y = -hitLeft.distance / Time.fixedDeltaTime;
                     }
                     else if (hitRight)
                     {
                         if (hitRight.collider.gameObject.tag != "Ground" && hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag != "bottle")
                         {
-                            velocity.y -= hitLeft.distance / Time.fixedDeltaTime;
-                            //transform.position = tempPosition;
+                            velocity.y = -hitLeft.distance / Time.fixedDeltaTime;
                         }
                     }
 
@@ -85,11 +82,9 @@ public class BoxScript : MonoBehaviour
                 }
                 else if (hitLeft.collider.gameObject.tag == "Ground" || hitLeft.collider.gameObject.tag == "Block")
                 {
-                    Debug.Log("Left träffadadadaedfe");
                     hasHit = true;
                     gameObject.tag = "Block";
-                    velocity.y -= hitLeft.distance / Time.fixedDeltaTime;
-                    //transform.position = tempPosition;
+                    velocity.y = -hitLeft.distance / Time.fixedDeltaTime;
                     stop = true;
                     if (hitLeft.collider.gameObject.layer == 8)
                     { }
@@ -102,35 +97,16 @@ public class BoxScript : MonoBehaviour
                         hasLanded = true;
                     }
                 }
-                else if (hitLeft.collider.gameObject.tag == "Destroy")
-                {
-                    if (hitRight)
-                    {
-                        if (hitLeft.collider.gameObject.tag == "Destroy" && (hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag == "Ground"))
-                        {
-                            outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    else
-                    {
-                        outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
-                        Destroy(gameObject);
-                    }
-                }
 
             }
 
 
             if (hitRight)
             {
-                Debug.Log("högér träffar");
                 if (hitRight.collider.gameObject.tag == "Bottle" || hitRight.collider.gameObject.tag == "Player")
                 {
-                    Debug.Log("högér träffar innw");
                     hasHit = true;
-                    velocity.y -= hitRight.distance / Time.fixedDeltaTime;
-                    //transform.position = tempPosition;
+                    velocity.y = -hitRight.distance / Time.fixedDeltaTime;
                     if (hitRight.collider.gameObject.tag == "Bottle")
                     {
                         hitRight.collider.gameObject.GetComponent<BottleScript>().isUnder = true;
@@ -139,8 +115,7 @@ public class BoxScript : MonoBehaviour
                     {
                         if (hitLeft.collider.gameObject.tag != "Ground" && hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag != "bottle")
                         {
-                            velocity.y -= hitRight.distance / Time.fixedDeltaTime;
-                            //transform.position = tempPosition;
+                            velocity.y = -hitRight.distance / Time.fixedDeltaTime;
                         }
                     }
                     if (playedSound == false)
@@ -150,11 +125,9 @@ public class BoxScript : MonoBehaviour
                 }
                 else if (hitRight.collider.gameObject.tag == "Ground" || hitRight.collider.gameObject.tag == "Block")
                 {
-                    Debug.Log("right träffadadadaedfe");
                     hasHit = true;
                     gameObject.tag = "Block";
-                    velocity.y -= hitRight.distance / Time.fixedDeltaTime;
-                    //transform.position = tempPosition;
+                    velocity.y = -hitRight.distance / Time.fixedDeltaTime;
                     if (hitRight.collider.gameObject.layer == 8)
                     { }
                     else
@@ -167,27 +140,48 @@ public class BoxScript : MonoBehaviour
                         hasLanded = true;
                     }
                 }
-                else if (hitRight.collider.gameObject.tag == "Destroy")
-                {
-                    if (hitLeft)
-                    {
-                        if (hitRight.collider.gameObject.tag == "Destroy" && (hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag == "Ground"))
-                        {
-                            outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
-                            Destroy(gameObject);
-                        }
-                    }
-                    else
-                    {
-                        outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
-                        Destroy(gameObject);
-                    }
-                }
 
             }  
-            if(hitLeft.collider == null && hitRight.collider == null)
+
+            
+            if (hitLeft.collider == null && hitRight.collider == null)
             {
                 hasHit = false;
+            }
+            else if (hitRight.collider.gameObject.tag == "Destroy")
+            {
+                if (hitLeft)
+                {
+                    if (hitRight.collider.gameObject.tag == "Destroy" && (hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag != "Ground"))
+                    {
+                        destroy = true;
+                    }
+                }
+                else
+                {
+                    destroy = true;
+                }
+            }
+            else if(hitLeft.collider.gameObject.tag == "Destroy")
+            {
+                if (hitRight)
+                {
+                    if (hitLeft.collider.gameObject.tag == "Destroy" && (hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag != "Ground"))
+                    {
+                        destroy = true;
+                    }
+                }
+                else
+                {
+                    destroy = true;
+                }
+
+            }
+
+            if(destroy == true)
+            {
+                outOfBounds.GetComponent<outOfBoundsSkript>().missedBoxes += 1;
+                Destroy(gameObject);
             }
 
         }
