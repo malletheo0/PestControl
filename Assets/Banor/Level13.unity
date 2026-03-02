@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8816264876678376562, guid: 28766e0a9ee6ba04eb7a31aa99504bfd, type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 1729628592}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -974,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550737075323872535, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1550737075323872535, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1172,6 +1176,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelText
       objectReference: {fileID: 0}
+    - target: {fileID: 4326446833488144244, guid: a6379acaf91c9f1439beff6b35b54735, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5391886988959552494, guid: a6379acaf91c9f1439beff6b35b54735, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1262,6 +1272,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5391886988959552494, guid: a6379acaf91c9f1439beff6b35b54735, type: 3}
   m_PrefabInstance: {fileID: 1729628590}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1729628592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4326446833488144244, guid: a6379acaf91c9f1439beff6b35b54735, type: 3}
+  m_PrefabInstance: {fileID: 1729628590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1746327468
 GameObject:
   m_ObjectHideFlags: 0

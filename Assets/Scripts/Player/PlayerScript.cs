@@ -42,10 +42,10 @@ public class PlayerScript : MonoBehaviour
         jumpAction = playerInput.actions.FindAction("Jump");
         moveAction.Enable();
         jumpAction.Enable();
+
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         levelText.SetText(sceneName);
-
     }
     void Update()
     {
