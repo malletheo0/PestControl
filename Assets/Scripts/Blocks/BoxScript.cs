@@ -54,7 +54,6 @@ public class BoxScript : MonoBehaviour
             }
             RaycastHit2D hitLeft = Physics2D.Raycast(leftDown.transform.position, Vector2.down, Mathf.Abs(velocity.y) * Time.fixedDeltaTime);
             RaycastHit2D hitRight = Physics2D.Raycast(rightDown.transform.position, Vector2.down, Mathf.Abs(velocity.y) * Time.fixedDeltaTime);
-            //tempPosition = transform.position;
 
             if (hitLeft)
             {
@@ -148,34 +147,41 @@ public class BoxScript : MonoBehaviour
             {
                 hasHit = false;
             }
-            else if (hitRight.collider.gameObject.tag == "Destroy")
+            if (hitRight)
             {
-                if (hitLeft)
+                if (hitRight.collider.gameObject.tag == "Destroy")
                 {
-                    if (hitRight.collider.gameObject.tag == "Destroy" && (hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag != "Ground"))
+                    if (hitLeft)
+                    {
+                        if (hitRight.collider.gameObject.tag == "Destroy" && (hitLeft.collider.gameObject.tag != "Block" && hitLeft.collider.gameObject.tag != "Ground"))
+                        {
+                            destroy = true;
+                        }
+                    }
+                    else
                     {
                         destroy = true;
                     }
-                }
-                else
-                {
-                    destroy = true;
                 }
             }
-            else if(hitLeft.collider.gameObject.tag == "Destroy")
+
+            if (hitLeft)
             {
-                if (hitRight)
+                if (hitLeft.collider.gameObject.tag == "Destroy")
                 {
-                    if (hitLeft.collider.gameObject.tag == "Destroy" && (hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag != "Ground"))
+                    if (hitRight)
+                    {
+                        if (hitLeft.collider.gameObject.tag == "Destroy" && (hitRight.collider.gameObject.tag != "Block" && hitRight.collider.gameObject.tag != "Ground"))
+                        {
+                            destroy = true;
+                        }
+                    }
+                    else
                     {
                         destroy = true;
                     }
-                }
-                else
-                {
-                    destroy = true;
-                }
 
+                }
             }
 
             if(destroy == true)
