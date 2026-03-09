@@ -4,17 +4,28 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
+    public GameObject startButton;
+    public bool hasPressed;
+    public GameObject soundManager;
     void Start()
     {
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        hasPressed = soundManager.GetComponent<SoundManagerScript>().hasPlayed;
     }
 
     void Update()
     {
-        
+        if (hasPressed)
+        {
+            Destroy(startButton);
+        }
     }
     public void StartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Destroy(startButton);
+        hasPressed = true;
+        soundManager.GetComponent<SoundManagerScript>().hasPlayed = true;
     }
     public void ExitGame()
     {
@@ -24,12 +35,11 @@ public class MenuScript : MonoBehaviour
             Application.Quit();
         #endif
     }
-    public void PlayerSoundSlider()
+    public void Continue()
     {
-
-    }
-    public void EffectsSoundSlider()
-    {
-
+        if(GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManagerScript>() != null)
+        {
+            SceneManager.LoadScene(GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManagerScript>().levelNumber);
+        }
     }
 }

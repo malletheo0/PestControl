@@ -28,7 +28,7 @@ public class PlayerScript : MonoBehaviour
     bool hasLanded = false;
     public LayerMask groundMask;
     public Animator animator;
-    string sceneName;
+    public string sceneName;
     public TextMeshProUGUI levelText;
 
     public AudioClip jumpSound;
