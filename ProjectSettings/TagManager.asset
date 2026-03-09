@@ -12,6 +12,7 @@ TagManager:
   - Bottle
   - NoStop
   - Destroy
+  - SoundManager
   layers:
   - Default
   - TransparentFX
