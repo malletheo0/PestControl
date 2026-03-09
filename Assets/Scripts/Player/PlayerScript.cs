@@ -89,6 +89,11 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        if (isGrounded == false)
+        {
+            velocity.y -= 30f * Time.fixedDeltaTime;
+        }
+
         if (velocity.x > 0)
         {
             if (!audioSource.isPlaying && isGrounded == true)
@@ -185,11 +190,6 @@ public class PlayerScript : MonoBehaviour
                     isGrounded = true;
                         velocity.y = hit2.distance / Time.fixedDeltaTime * -1;
                 }
-            }
-
-            if (isGrounded == false)
-            {
-                velocity.y -= 30f * Time.fixedDeltaTime;
             }
         }
 
