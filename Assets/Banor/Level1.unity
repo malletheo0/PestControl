@@ -1958,6 +1958,7 @@ GameObject:
   - component: {fileID: 8259568043529863747}
   - component: {fileID: 5484139537022407439}
   - component: {fileID: 1304910592522491602}
+  - component: {fileID: 8259568043529863748}
   m_Layer: 5
   m_Name: Cloud
   m_TagString: Untagged
@@ -2030,6 +2031,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7314541796696818240}
   m_CullTransparentMesh: 1
+--- !u!114 &8259568043529863748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314541796696818240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61424429da1e34a438ddffe052075210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonFirstPuls
+  scale: {x: 0, y: 0, z: 0}
+  baseScale: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: 0, z: 0}
+  size: {x: 0, y: 0}
+  clicked: 0
 --- !u!114 &8592431511231993060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2263,6 +2281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e6655dacd8c5e41b1662361dcf5af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Button
+  cloudButtonLevelOne: {fileID: 7314541796696818240}
   Cloud: {fileID: 8406936720520545921, guid: b784010b1e709fa45a4f6d00f50d7cc5, type: 3}
   Box: {fileID: 3775534370631653641, guid: 891abd4d96eb18246b206dde353e416a, type: 3}
   Bottle: {fileID: 3955643464102627737, guid: 2403bb96901ba6244874076e4cd8f65b, type: 3}

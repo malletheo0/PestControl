@@ -1,10 +1,13 @@
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject cloudButtonLevelOne;
     public GameObject Cloud;
     public GameObject Box;
     public GameObject Bottle;
@@ -54,6 +57,11 @@ public class Button : MonoBehaviour
             cloudButtonText.text = cloudAmount.ToString();
             gameManager.GetComponent<GameManager>().blockSelected = true;
             gameManager.GetComponent<GameManager>().cloudSelected = true;
+        }
+        
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            cloudButtonLevelOne.GetComponent<ButtonFirstPuls>().clicked = true;
         }
     }
 

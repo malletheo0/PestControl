@@ -11,7 +11,10 @@ public class BottleScript : MonoBehaviour
     void Start()
     {
         outOfBounds = GameObject.Find("OutOfBounds");
-        outOfBounds.GetComponent<outOfBoundsSkript>().unBrokenBottles += 1;
+        if (outOfBounds != null)
+        {
+            outOfBounds.GetComponent<outOfBoundsSkript>().unBrokenBottles += 1;
+        }
     }
     void Update()
     {
