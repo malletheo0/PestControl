@@ -6701,6 +6701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7225b78d8ab472488428050c2802719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector
+  soundManager: {fileID: 0}
+  levelUnlock: 0
 --- !u!1 &1821009699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4790241693043806717, guid: 9a2ea226d8876d74fbd6c0b71a81d9a7, type: 3}
@@ -6725,6 +6727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   hasPlayed: 0
   levelNumber: 0
+  highestLevelNumber: 0
   level: {}
 --- !u!1001 &1833375278
 PrefabInstance:
@@ -7671,6 +7674,10 @@ PrefabInstance:
     - target: {fileID: 37447904925901994, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

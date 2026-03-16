@@ -224,6 +224,7 @@ MonoBehaviour:
   audioSource: {fileID: -6600809297183819896}
   landSound: {fileID: 8300000, guid: 0efeb5384776faa42acbca52b3872fda, type: 3}
   hasHit: 0
+  destroy: 0
 --- !u!82 &-6600809297183819896
 AudioSource:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1922215
   m_Pitch: 1
   Loop: 0
   Mute: 0
