@@ -3,10 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public GameObject soundManager;
+    public int levelUnlock;
+
     void Start()
     {
-        
+        soundManager = GameObject.FindGameObjectWithTag("SoundManager");
+        levelUnlock = soundManager.GetComponent<SoundManagerScript>().highestLevelNumber;
     }
 
     // Update is called once per frame
@@ -17,6 +21,9 @@ public class LevelSelector : MonoBehaviour
 
     public void LoadLevel(int levelNumber)
     {
-        SceneManager.LoadScene(levelNumber);
+        if (levelNumber <= levelUnlock)
+        {
+            SceneManager.LoadScene(levelNumber);
+        }
     }
 }

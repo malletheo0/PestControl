@@ -6,6 +6,7 @@ public class SoundManagerScript : MonoBehaviour
     public static SoundManagerScript Instance;
     public bool hasPlayed;
     public int levelNumber;
+    public int highestLevelNumber;
     public Scene level;
     void Start()
     {
@@ -20,13 +21,24 @@ public class SoundManagerScript : MonoBehaviour
                 hasPlayed = true;
             }
         }
+    }
 
-        
-        if (levelNumber <= SceneManager.GetActiveScene().buildIndex)
+    private void OnLevelWasLoaded(int level)
+    {
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             levelNumber = SceneManager.GetActiveScene().buildIndex;
-            hasPlayed = true;
         }
+
+        if (levelNumber >= highestLevelNumber)
+        {
+            highestLevelNumber = levelNumber;
+        }
+        hasPlayed = true;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
     }
 
     private void Awake()
