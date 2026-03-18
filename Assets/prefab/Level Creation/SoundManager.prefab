@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1737177236107618508}
   - component: {fileID: 1596405830595940901}
-  - component: {fileID: 8084899436742634410}
+  - component: {fileID: 5635800342715951561}
   m_Layer: 0
   m_Name: SoundManager
-  m_TagString: Untagged
+  m_TagString: SoundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8084899436742634410
+--- !u!114 &5635800342715951561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +139,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4790241693043806717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b01d999878870840b6c6305b1053759, type: 3}
+  m_Script: {fileID: 11500000, guid: bd01a0940c1715748b55043b21590ba3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuScript
-  soundManager: {fileID: 4790241693043806717}
+  m_EditorClassIdentifier: '::'
+  hasPlayed: 0
+  levelNumber: 0
+  highestLevelNumber: 0
+  level: {}
+  audioSource: {fileID: 1596405830595940901}

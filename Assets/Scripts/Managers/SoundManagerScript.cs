@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SoundManagerScript : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SoundManagerScript : MonoBehaviour
     public int levelNumber;
     public int highestLevelNumber;
     public Scene level;
+    public AudioSource audioSource;
+    public Slider musicSlider;
     void Start()
     {
         DontDestroyOnLoad(gameObject.transform);
@@ -21,6 +24,7 @@ public class SoundManagerScript : MonoBehaviour
                 hasPlayed = true;
             }
         }
+        musicSlider.value = audioSource.volume;
     }
 
     private void OnLevelWasLoaded(int level)
