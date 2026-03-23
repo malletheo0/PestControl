@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEditor.Events;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,8 +9,10 @@ public class SliderScript : MonoBehaviour
     public Slider slider;
     void Start()
     {
-        UnityEventTools.RemovePersistentListener(slider.onValueChanged, 0);
-        UnityEventTools.AddPersistentListener(slider.onValueChanged, findGameObjectWithTag("SoundManager").getcomponent.)
+        //UnityEventTools.RemovePersistentListener(slider.onValueChanged, 0);
+        //UnityAction<float> tempAction = new UnityAction<float>(GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManagerScript>().UpdateVolume);
+        //UnityEventTools.AddFloatPersistentListener(slider.onValueChanged, tempAction, slider.value);
+        
     }
 
     void Update()

@@ -11,6 +11,7 @@ public class SoundManagerScript : MonoBehaviour
     public Scene level;
     public AudioSource audioSource;
     public Slider musicSlider;
+    public GameObject canvas;
     void Start()
     {
         DontDestroyOnLoad(gameObject.transform);
@@ -24,7 +25,8 @@ public class SoundManagerScript : MonoBehaviour
                 hasPlayed = true;
             }
         }
-        musicSlider.value = audioSource.volume;
+        //musicSlider.value = audioSource.volume;
+        audioSource.volume = GameObject.FindGameObjectWithTag("Canvas").GetComponent<AudioSource>().volume;
     }
 
     private void OnLevelWasLoaded(int level)
@@ -43,6 +45,11 @@ public class SoundManagerScript : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+    }
+
+    public void UpdateVolume(float volume)
+    {
+        
     }
 
     private void Awake()
