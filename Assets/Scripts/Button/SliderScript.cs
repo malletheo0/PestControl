@@ -1,7 +1,5 @@
 using Unity.VisualScripting;
-using UnityEditor.Events;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SliderScript : MonoBehaviour
