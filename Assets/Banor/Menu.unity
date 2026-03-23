@@ -6742,6 +6742,27 @@ MonoBehaviour:
   soundManager: {fileID: 0}
   levelUnlock: 0
   audioSource: {fileID: 0}
+  levelButtons:
+  - {fileID: 1093374602}
+  - {fileID: 2012395599}
+  - {fileID: 253959410}
+  - {fileID: 1316744677}
+  - {fileID: 597697546}
+  - {fileID: 1207578678}
+  - {fileID: 1217160025}
+  - {fileID: 976196492}
+  - {fileID: 1162168682}
+  - {fileID: 1489528356}
+  - {fileID: 985538158}
+  - {fileID: 1243880904}
+  - {fileID: 476614942}
+  - {fileID: 1019390027}
+  - {fileID: 1972392092}
+  - {fileID: 1464555480}
+  - {fileID: 33714878}
+  - {fileID: 1624487182}
+  - {fileID: 1702096481}
+  - {fileID: 1553973369}
 --- !u!82 &1745685990
 AudioSource:
   m_ObjectHideFlags: 0
