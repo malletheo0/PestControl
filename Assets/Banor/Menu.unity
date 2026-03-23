@@ -677,6 +677,7 @@ MonoBehaviour:
   startButton: {fileID: 1672319435}
   hasPressed: 0
   soundManager: {fileID: 0}
+  audioSource: {fileID: 488922650}
 --- !u!1 &253959407
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +946,7 @@ MonoBehaviour:
   startButton: {fileID: 0}
   hasPressed: 0
   soundManager: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &309794604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1595,11 @@ MonoBehaviour:
   baseScale: {x: 0, y: 0, z: 0}
   position: {x: 0, y: 0, z: 0}
   size: {x: 0, y: 0}
+--- !u!82 &488922650 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1596405830595940901, guid: 9a2ea226d8876d74fbd6c0b71a81d9a7, type: 3}
+  m_PrefabInstance: {fileID: 1833375278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &495196179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2429,7 @@ MonoBehaviour:
   startButton: {fileID: 0}
   hasPressed: 0
   soundManager: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &886482736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6733,6 +6741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector
   soundManager: {fileID: 0}
   levelUnlock: 0
+  audioSource: {fileID: 0}
 --- !u!82 &1745685990
 AudioSource:
   m_ObjectHideFlags: 0

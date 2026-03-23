@@ -26,8 +26,10 @@ public class SoundManagerScript : MonoBehaviour
             }
         }
         //musicSlider.value = audioSource.volume;
-        audioSource.volume = GameObject.FindGameObjectWithTag("Canvas").GetComponent<AudioSource>().volume;
-    }
+
+        if (GameObject.FindGameObjectWithTag("Canvas") != null)
+            audioSource.volume = GameObject.FindGameObjectWithTag("Canvas").GetComponent<AudioSource>().volume;
+    } 
 
     private void OnLevelWasLoaded(int level)
     {
