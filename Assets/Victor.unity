@@ -979,20 +979,12 @@ PrefabInstance:
       value: MegaConfettiParticles
       objectReference: {fileID: 0}
     - target: {fileID: 4613143574759032289, guid: 168ee72e478ff304fa88467c6cc97b47, type: 3}
-      propertyPath: lengthInSec
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613143574759032289, guid: 168ee72e478ff304fa88467c6cc97b47, type: 3}
       propertyPath: ShapeModule.type
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4613143574759032289, guid: 168ee72e478ff304fa88467c6cc97b47, type: 3}
       propertyPath: ShapeModule.angle
       value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4613143574759032289, guid: 168ee72e478ff304fa88467c6cc97b47, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4613143574759032289, guid: 168ee72e478ff304fa88467c6cc97b47, type: 3}
       propertyPath: InitialModule.maxNumParticles

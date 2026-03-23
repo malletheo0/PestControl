@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4756510839103109171}
   - component: {fileID: 1051200509970984229}
   - component: {fileID: 1751695071782230869}
+  - component: {fileID: 5032084114339552838}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Finish
@@ -280,3 +281,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5032084114339552838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7026851096509228874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738de733e614b3841b0974aa2087e50d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExtraConfetti
+  Confetti: {fileID: 4613143574759032289, guid: 168ee72e478ff304fa88467c6cc97b47, type: 3}
+  canvas: {fileID: 0}
+  cloudButton: {fileID: 0}
+  bottleButton: {fileID: 0}
+  boxButton: {fileID: 0}
+  blockCount: 0
+  played: 0

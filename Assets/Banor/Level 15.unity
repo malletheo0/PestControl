@@ -1346,6 +1346,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 4753730683779689535}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: boxButton
+      value: 
+      objectReference: {fileID: 1379822940041597398}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: cloudButton
+      value: 
+      objectReference: {fileID: 2010038634340700076}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: bottleButton
+      value: 
+      objectReference: {fileID: 3317505736020301299}
     - target: {fileID: 7026851096509228874, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
       propertyPath: m_Name
       value: Goal

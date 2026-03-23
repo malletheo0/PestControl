@@ -193,34 +193,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        //if(isGrounded == true)
-        //{
-        //    bool hit1True = false;
-        //    bool hit2True = false;
-        //    RaycastHit2D hit1 = Physics2D.Raycast(botLeft.position + Vector3.right * 0.01f, Vector2.up, 0.2f, groundMask);
-        //    RaycastHit2D hit2 = Physics2D.Raycast(botRight.position + Vector3.left * 0.01f, Vector2.up, 0.2f, groundMask);
-        //    if(hit1)
-        //    {
-        //        hit1True = true;
-        //    }
-        //    if(hit2)
-        //    {
-        //        hit2True = true;
-        //    }
-
-        //    if(hit1True || hit2True)
-        //    {
-        //        float smallestDistance = hit1.distance;
-        //        if(hit2.distance <= smallestDistance)
-        //        {
-        //            smallestDistance = hit2.distance;
-        //        }
-
-        //        Debug.Log("fuck uyes");
-        //        transform.position = new Vector3(transform.position.x, transform.position.y + (smallestDistance + 0.1f), transform.position.z);
-
-        //    }
-        //}
+       
 
         inputVelocity.x = 0f;
         transform.position += velocity * Time.fixedDeltaTime;
@@ -241,7 +214,7 @@ public class PlayerScript : MonoBehaviour
     IEnumerator DelayGoal()
     {
         
-            for (float i = 0; i < 2f; i += Time.deltaTime)
+            for (float i = 0; i < 3f; i += Time.deltaTime)
             {
                 yield return null;
             }

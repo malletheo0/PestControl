@@ -285,6 +285,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 4753730683299029643}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: boxButton
+      value: 
+      objectReference: {fileID: 1379822939492622178}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: bottleButton
+      value: 
+      objectReference: {fileID: 3317505735431445319}
     - target: {fileID: 7026851096509228874, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
       propertyPath: m_Name
       value: Goal
@@ -2372,6 +2384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8e6655dacd8c5e41b1662361dcf5af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Button
+  cloudButtonLevelOne: {fileID: 0}
   Cloud: {fileID: 8406936720520545921, guid: b784010b1e709fa45a4f6d00f50d7cc5, type: 3}
   Box: {fileID: 3775534370631653641, guid: 891abd4d96eb18246b206dde353e416a, type: 3}
   Bottle: {fileID: 3955643464102627737, guid: 2403bb96901ba6244874076e4cd8f65b, type: 3}

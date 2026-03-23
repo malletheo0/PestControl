@@ -1376,17 +1376,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4756510839103109171, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
-      propertyPath: Confetti
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: canvas
       value: 
-      objectReference: {fileID: 4613143574759032289, guid: edfa8d3f2279c2c4f96c9c71edab0d91, type: 3}
+      objectReference: {fileID: 4584605739917304275}
+    - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: cloudButton
+      value: 
+      objectReference: {fileID: 7314541796696818240}
     - target: {fileID: 7026851096509228874, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
       propertyPath: m_Name
       value: Goal
-      objectReference: {fileID: 0}
-    - target: {fileID: 7026851096509228874, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -29,24 +29,37 @@ public class ExtraConfetti : MonoBehaviour
             {
                 played = true;
                 blockCount = canvas.GetComponent<Button>().boxAmount + canvas.GetComponent<Button>().bottleAmount + canvas.GetComponent<Button>().cloudAmount;
-                StartCoroutine(MegaConffeti(Time.deltaTime, blockCount));
+                StartCoroutine(MegaConffeti((float)1.5, blockCount));
             }
         }
     }
 
-    private IEnumerator MegaConffeti(float wait, int blockAmount)
+    private IEnumerator MegaConffeti(float timer, int blockAmount)
     {
-        while((gameObject.transform.position - boxButton.transform.position).magnitude <= 0.5 && 
-            (gameObject.transform.position - bottleButton.transform.position).magnitude <= 0.5 &&
-            (gameObject.transform.position - cloudButton.transform.position).magnitude <= 0.5)
+        float timerMax = timer;
+        timer = 0f;
+        Vector2 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        while (timer < timerMax)
         {
-
+            timer += Time.deltaTime;
+            if (cloudButton != null)
+            {
+                cloudButton.transform.position = cloudButton.transform.position + (new Vector3 (screenPoint.x, screenPoint.y) - cloudButton.transform.position) * (timer / timerMax);
+            }
+            if (bottleButton != null)
+            {
+                bottleButton.transform.position = bottleButton.transform.position + (new Vector3(screenPoint.x, screenPoint.y) - bottleButton.transform.position) * (timer / timerMax);
+            }
+            if (boxButton != null)
+            {
+                boxButton.transform.position = boxButton.transform.position + (new Vector3(screenPoint.x, screenPoint.y) - boxButton.transform.position) * (timer / timerMax);
+            }
             yield return null;
         }
         if (blockCount >= 1)
         {
-            Instantiate(Confetti, new Vector2(960, 540), Quaternion.identity);
+            Instantiate(Confetti, new Vector2(0,0), Quaternion.identity);
         }
-
+        
     }
 }
