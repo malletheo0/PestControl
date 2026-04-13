@@ -39,8 +39,10 @@ public class ExtraConfetti : MonoBehaviour
         float timerMax = timer;
         timer = 0f;
         Vector2 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        while (timer < timerMax)
+        if (blockCount >= 1)
         {
+            while (timer < timerMax)
+            {
             timer += Time.deltaTime;
             if (cloudButton != null)
             {
@@ -55,9 +57,8 @@ public class ExtraConfetti : MonoBehaviour
                 boxButton.transform.position = boxButton.transform.position + (new Vector3(screenPoint.x, screenPoint.y) - boxButton.transform.position) * (timer / timerMax);
             }
             yield return null;
-        }
-        if (blockCount >= 1)
-        {
+            }
+
             Instantiate(Confetti, new Vector2(0,0), Quaternion.identity);
         }
         

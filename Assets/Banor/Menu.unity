@@ -7807,12 +7807,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1745685990}
     - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1576750212}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: set_volume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439406065224316071, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2774056197055729969, guid: 30c1f6e74803ce5428a0e54bdb7731b6, type: 3}
       propertyPath: m_Name

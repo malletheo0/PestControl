@@ -18,4 +18,9 @@ public class SliderScript : MonoBehaviour
     void Update()
     {
     }
+
+    public void SaveVolume()
+    {
+        PlayerPrefs.SetFloat("keepVolume", slider.value);
+    }
 }

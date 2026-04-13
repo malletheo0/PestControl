@@ -3715,8 +3715,8 @@ MonoBehaviour:
   Cloud: {fileID: 8406936720520545921, guid: b784010b1e709fa45a4f6d00f50d7cc5, type: 3}
   Box: {fileID: 3775534370631653641, guid: 891abd4d96eb18246b206dde353e416a, type: 3}
   Bottle: {fileID: 3955643464102627737, guid: 2403bb96901ba6244874076e4cd8f65b, type: 3}
-  cloudAmount: 1
-  boxAmount: 3
+  cloudAmount: 0
+  boxAmount: 0
   bottleAmount: 3
   cloudButtonText: {fileID: 0}
   boxButtonText: {fileID: 0}
