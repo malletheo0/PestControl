@@ -707,6 +707,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4756510839103109171, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
+      propertyPath: yaaySound
+      value: 
+      objectReference: {fileID: 8300000, guid: e7c67edf3c122b44f8bcffa478efec84, type: 3}
     - target: {fileID: 5032084114339552838, guid: 462dfced7acca1141b9ae8552da75a49, type: 3}
       propertyPath: canvas
       value: 
