@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
     public string sceneName;
     public TextMeshProUGUI levelText;
 
-    public AudioClip jumpSound;
+    //public AudioClip jumpSound;
     public AudioClip landSound;
     public AudioClip walkSound;
     public AudioSource audioSource;
@@ -56,7 +56,7 @@ public class PlayerScript : MonoBehaviour
         if (jumpAction.WasPressedThisFrame() && isGrounded == true)
         {
 
-            audioSource2.PlayOneShot(jumpSound);
+            //audioSource2.PlayOneShot(jumpSound);
             hasJumped = true;
         }
         if (hasLanded)
